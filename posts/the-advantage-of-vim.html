@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>vim的优秀之处在哪里 | H!Grid博客镜像站点</title>
+<meta name="author" content="higrid">
+
+<meta name="description" content="vim的特色之处到底是什么，最开始使用vim是因为学长的建议，同时vim有着编辑器之神的传说。大家从来都是在讨论vim和emacs之争，很自然的，vim党或者emacs用户，都没有把IDE放在讨论的范畴之类。我等也不过，远远的看着这些所谓的争论，毕竟，我只是一个vim用户而已，那些论战是牛人们的事情，vim有多好，他们自然可以证明，或者说，这无需证明，vim很优秀，这是公论了。">
+
+<meta name="keywords" content="vim的优秀之处">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta property="og:title" content="vim的优秀之处在哪里"/>
+<meta property="og:site_name" content="H!Grid博客镜像站点"/>
+
+<!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
+<!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
+<!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
+
+<link rel="author" href="http://higrid.net" />
+<link href="/favicon.png" rel="icon">
+<link rel="alternate" href="/atom.xml" title="H!Grid博客镜像站点 Feed" type="application/atom+xml">
+
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<!--[if lt IE 9]>
+   <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
+   <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+   <script src="http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<link href="http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/js/respond.proxy.js"></script>
+   <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
+<script type="text/javascript">var site = {BASE_URI: '/'};var _js2load = [];</script>
+
+</head>
+<body>
+      <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">H!Grid博客镜像站点</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+  
+        <li><a href="/" title="主页">主页</a></li>      
+        <li><a href="/about/" title="关于">关于</a></li>      
+        <li><a href="/archives/" title="归档">归档</a></li>      
+      <li class='dropdown'>
+        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
+        <ul class='dropdown-menu'>
+    
+          <li><a href="//higrid.net" title="嗨网在线">嗨网在线</a></li>    
+          <li><a href="https://github.com/sheyi" title="gihtub">gihtub</a></li>    
+        </ul>
+      </li>
+    
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+      
+        <li><a href="https://twitter.com/higridnet">twitter</a></li>
+      
+      
+      
+      
+        <li><a href="https://github.com/sheyi/higrid">github</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id='content' class="container">
+     <div class="page-header-wrapper">
+      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+      <div class="page-header"><h1>H!Grid博客镜像站点 <small>基于PHP语言：建站更容易、更快速、更方便、更强悍</small></h1></div>
+     </div>
+     <div class="row">
+       <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
+      <section id='header_widget'></section>
+          <div id="wrapper"><article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title">vim的优秀之处在哪里</h1>
+      
+        <span>发表于<time datetime="2013-12-01T06:36:35.000Z"> <a href="/posts/the-advantage-of-vim.html">2013-12-01</a></time></span>      
+    </header>
+    
+    <section id='before_content_widget'></section>
+    <div class="entry">
+      
+        <p>vim的特色之处到底是什么，最开始使用vim是因为学长的建议，同时vim有着编辑器之神的传说。大家从来都是在讨论vim和emacs之争，很自然的，vim党或者emacs用户，都没有把IDE放在讨论的范畴之类。我等也不过，远远的看着这些所谓的争论，毕竟，我只是一个vim用户而已，那些论战是牛人们的事情，vim有多好，他们自然可以证明，或者说，这无需证明，vim很优秀，这是公论了。</p>
+<p><a id="more"></a> </p>
+<h2 id="vim的特色之处究竟在哪里">vim的特色之处究竟在哪里</h2>
+<p>仔细阅读vim自带的文档，从vim官网上查看一些信息。可以确定的是vim从来没有自称神器，在一篇vim 20周年的文章中可以看到，vim官网所提出的，为何人们还在使用vim的几个理由：多文件操作(Buffer和分屏)、有模式的、多个寄存器、宏、高度可配置扩展、跨平台。这些，所有的现代编辑器，IDE都(除了多模式)能做到，而且做的都还不错。确实，IDE有着很多优秀的特性，是vim 所无法做到的。关于此问题的讨论，也没有一个vim用户站出来，像玉伯一样，用一个比较有力的观点说明vim的特色之处。神器毕竟只是一个传说，那么，vim为何成为神器呢？带着这个问题，我翻了很多资料，所获甚少，关于神器的传说，似乎没有出处。</p>
+<p>似乎，vim不过一个普通的编辑器而已，但是，作为一个忠实的vim用户，我感觉，这个普通的编辑器，有着自己无可比拟的特殊之处，我觉得，我应该找到这些特殊的，让无数程序员着迷的特性是什么。我个人使用vim不过3年，3年时间，对于一个vim用户来说，一点都不长，甚至是刚入门一会儿，我知道我个人的理解可能不那么准确，但是我还是总结了几点，我个人觉得是vim特色之处，是IDE所不可比拟，是那些IDE的所谓的vim模式所做不到的。</p>
+<p>我认为vim和IDE最大区别在于，vim是有模式的，vim是unix一部分，秉承这unix哲学——一切都是文本，vim中的命令是原子性的，可以随意组合。下面一一解释，vim的特色之处很多，不过也有一些是IDE所擅长的，比如自动提醒之类的，IDE可以内置一个语言引擎，这样提示确实要强大的多。</p>
+<h2 id="Vim的模式">Vim的模式</h2>
+<p>vim的模式，是的vim可以有多种编辑状态，最常用的是普通模式，输入模式，视图模式，命令模式，普通状态是vim的默认模式，所有键盘的按键都是你可以使用的快捷键，这时候，你在用的似乎不是在编辑文本了，更确切的说是，处理文本，键盘不再是输入字符，而是 vim的各种命令。这样，使得vim非常快速做各种改动。写代码过程中，其实我们花更多的时间在调试，修改代码，而不是输入代码，写代码。所以，我们需要vim的正常模式，进入vim 首先进入的是正常模式。</p>
+<p>有人表示，vim的模式看起来非常诡异，让人无法理解，模式切换复杂。其实，古老的vi使用esc进入正常模式，现代的vim已经提供很多其他更方便的方式模式切换 <code>C-o, C-[, C-c</code>(C表示Ctrl键)，vim基本只需要使用大键盘就ok了，因为有模式，可以随意绑定各种快捷键。各种现代的编辑器或者IDE，都有自己的选择模式和命令模式，不过在vim里面，正常模式是特有的，在正常模式下，vim的命令大致分为两种，操作和文本对象，文本对象是的vim里面所有文本区块是各种符合程序员思维的区块，vim提供了丰富的文本对象，w一个单词，p一个段落，s一句话，[]表示一个中括号块，类似的还有 ( ) { }  等，这样的区块在程序代码中经常出现。确定了区块，然后可以执行各种操作了，比如删除，修改边界符合，在一个区块里进行替换，或者移动某个区块单位。</p>
+<p>正常模式下，使用最多的是光标的移动了。在代码中找到目标代码，有文本区块的概念，就非常容易，比如，我们想在一个{}两端跳转，输入{就可以了，va{就可以选中一个{}包围的区块。也许有人会说，使用鼠标移动要比键盘移动快， vim的h j k l只是一种移动方式，单步移动是最基础的移动方式，vim里面更快速的是使用区块移动，一个单词，一个大括号包围的区块，等等。vim不仅仅可以移动光标，还能移动视窗位置<code>zz zt zb</code>，把光标所在位置设置为视窗中心，或者顶部、底部，这样的功能还是非常实用的。鼠标移动的最大问题是，鼠标是不准确的，如果我们确切知道自己要如何移动，键盘的方式更快速。对于鼠标比较适用模糊定位，vim 也能做到，在光标附近，我们明确想要去某个位置，而不是某个区块的情况下，vim使用 <a href="https://github.com/Lokaltog/vim-easymotion" target="_blank" rel="external">easymotion</a> 插件可以快速而准确定位。具体实现是，把光标位置后面的每个单词的第一个字母标记为a-z 26个字母，然后输入你想要去的单词前面的那个字母，也可以定位到单词所在位置了。你需要做的是两个步骤，高亮单词首字母，选择你要去的位置字母。这和鼠标的速度，至少不相上下，而且更加准确。</p>
+<p>说的有点抽象，举个例子吧：</p>
+<pre><code>hello world. We use vim for the ohly editor.
+</code></pre><p>如果光标恰好在world的d上面，现在要去修改oely，把e改为n，vim可以使用<code>2fhrn</code>，这样完成修改，这样或许显得有些繁琐，还得首先调用f进行查找，鼠标可以直接定位修改，那么vim的快速模式，执行的命令是<code>,,w</code>此时，启动easymotion，文本变成了：</p>
+<p>   <code>hello aorld. be cse dim eor fhe ghly hditor.</code></p>
+<p>对比前面可以看到，所有单词的第一个字母都有了编号(hellow world变成了hellow aorld，a就是编号，a会高亮，其他都为灰色)，可以很快定位目标单词的位置，然后输入g，跳转到ohly(ohly变成了ghly，g是编号)的o上，输入l右移一个单位，rn，修改h为n，ok完成。这里提到的只是一个基本功能，easymotion可以做更多快速定位操作的。上面这种模式，在vim的选择模式下同样有效：</p>
+<pre><code>`hello world. We use vim for the only editor.
+
+hello world. We use vim for the only editor.
+
+hello world. We use vim for the only editor.    `
+</code></pre><p>上面的代码，如果选中了第一行的hello world，下面我要继续选择第三行的editor，这个时候，vim的easymotion，vim的文本区块选择还是依然有效的，如果是用鼠标，鼠标的选择和键盘是互斥的，你只能老老实实拖拽到第三行吧。这里，其实也是后面要说的，vim一致性体验的一个方面，在各种模式下，所有的操作都是通用的。</p>
+<h2 id="一致性">一致性</h2>
+<p>一切都是文本，这样其实意味着，在vim里面高度的编码一致性体验。一致性体验，这个只有在vim和emacs里面可以做到的。这意味着，在vim中，你的所有操作，都是vim风格的，处理正常的文本处理，我们有时候需要调用终端，或者文件操作，文件查找等等。在vim里面操作一个文件也是一个文本，这样，修改文件夹和修改文件名一样了。IDE里面总是有着各种窗口，这些窗口彼此是独立的。vim只有一个窗口，在这个窗口里面所有操作都是一致的。</p>
+<p>一致性在上面也提到过，easymotion的移动，在选择模式和正常模式下一致的。在比如，vim 的帮助文档，统一的入口是:help命令，文档是vim的一部分，文档的浏览也是通过 vim的键盘命令导航的。而大多数IDE的帮助文档，都是一个独立的系统。比如在emacs里面，对一个文件夹的操作，和操作一个文本是一致的，这在vim同样可以做到。emacs自带eshell ，终端可以跑在emacs里面，这时候，终端就是emacs的一个buffer，同样在vim也可以做到类似的功能。IDE 可以自带一个shell，不过，ide的shell更像是一个shell的窗口放在ide里面，而vim里面， shell就是vim处理的一个文本，它在vim里面，和普通的文本处理没有本质的差异。或许vim 只能处理文本，所以所有操作都以文本的形式存在，所有操作可以使用同样的键盘命令移动方式使用，nerdtree的文件节点同样是一个buffer，一堆文本。而IDE 里面，文件结构树是IDE一个与编辑窗口不一样的一个窗口对象，IDE的其他窗口里面，编辑模式下的快捷键移动等，都不再有效。</p>
+<h3 id="vim命令组合">vim命令组合</h3>
+<p>很多人说，vim里面能够做到的快捷键，IDE都能做到。我觉得，vim里面的操作，很多时候不应该称之为快捷键，应该说是命令，编辑器命令。使用vim操作文本，其实就是在调用编辑器命令。这和IDE所谓的快捷键是完全不同的概念，IDE把命令封装成一系列快捷键，但是这些命令本身对使用者是不可见的，而vim里面，所有按键都是一个最小单位命令：一个操作，一个文本对象区块，或者一种模式，使用vim就是在不停的调用各种命令。比如，daw，在 vim里面表示delete a word，d a w是三个彼此独立的命令，d表示的是执行操作删除，<code>aw</code> 是作用范围，可以看做是函数传递的参数。你可以用d后面接受各种文本区块的组合， <code>aw:a word</code> ， <code>ap:a paragraph</code> 等等，同样，<code>aw</code>前面也可以接受其他任意各种命令，比如v<code>vaw</code>选中，y<code>yaw</code>复制。这是其他任何IDE所做不到的，IDE 里面的快捷键就是一个功能，快捷键是不能拆分成单独命令。命令可以拆分，你可以在各种模式下使用这些最小命令单位。在 vim里面，选择一部分文件修改，和修改整个文件是没有任何区别的。</p>
+<p>命令最小化的优势在于，你能做任意你想做的事情，这些命令的各种组合，记住一个命令，它能够在多种情况下使用，看似命令繁琐，其实命令所作用的方式在vim里面是一致的。y表示复制，对文件的复制用的也是y命令。</p>
+<p>举个例子，vim插件surround，操作文本：”hello”, ds” =&gt; hello，cs”‘ =&gt; ‘hello’ 。这里使用两个命令<code>ds&quot;</code>和<code>cs&quot;&#39;</code>，乍一看似乎很诡异的语法，其实了解了vim的命令原子特征，就可以很轻松理解这两个命令了，<code>ds&quot;</code>表示<code>delete surround &quot;</code>，双引号在vim表示双引号围起来的区块，d是vim中删除的基本命令，<code>dw</code>删除一个单词，<code>dap</code>删除一个段落. 在IDE里面，相同的操作大概是一个快捷键，记住那么一个快捷键，更重要的是，这些原子命令，在任何地方都是有效的。每个vim命令都是一个小功能，组成一个强大的文本编辑器，就像 unix由各种小部件构成一样，这是任何IDE所无法做到的。</p>
+<h2 id="其他">其他</h2>
+<p>这里讲一个小故事，最近前端模板比较流行使用编译的方式来写语法解析，一般的一套模板语法就是一个和上下文无关的语法规则，比如handlebarsjs，coffeejs。承玉为kissy增加新的xtemplate，同样使用的是Bison的js实现来生成语法规则，Bison语法由yacc和lex两者组成，前者是语法规则，后者是语法中词法规则，语法由词法构成。至于什么是yacc和lex，这里不讨论，咱说的是编辑器。承玉实现了Bison的js版本，kison，同样的js实现还有Jison， handlebarsjs和coffeejs都是用Jison生成解析器的。kison和Jison都接受json文件作为词法和语法规则描述文件，不同的是Jison还支持标准的yacc和lex文件格式，而kissy的xtemplate 语法描述文件是<a href="https://github.com/kissyteam/kissy/blob/master/src/xtemplate/sub-modules/compiler/src/parser-grammar.kison" target="_blank" rel="external">json</a> 的。这是问题的关键，实际上，yacc文件描述要比json容易理解得多。handlebarsjs的语法描述是yacc形式的，coffeejs的语法描述原来也是yacc格式的，不过，后来，改成了coffeejs写的了，coffeejs为了保证coffee源码整体都是coffeejs写的，所以使用了coffeejs形式。但 xtemplate为何会使用json，实际上，yacc转换为json应该不复杂的。而yacc文件描述语言，几乎是语法文档的标准</p>
+<p>如果写出json，一方面可读性不好，另一方面，语法有错误也不好定位，没有语法高亮。饶了这么久，终于到正题上了，为啥kissy没有使用yacc而是json，我个人猜测，原因大概是，承玉是开发工具是IntelliJ IDEA，.yy文件根本无法识别，市场上也没有这么一个插件支持yacc语法，这么古老的东西，大概不会有现代编辑器支持了吧。subline text2同样，.yy文件也只能当成是plain text处理。而我也恰好写了一个 velocity的模板解析器，用vim打开.yy的文件，毫无压力，语法高亮，错误提示全部都有。我相信，没有程序员愿意对着一个黑白的编辑器写代码吧。</p>
+<p>故事到此为止，vim是古老一些了，但vim从来不是为某一种语言，某一类开发者准备的，它是一个文本编辑器，能做文本编辑器应该做的一切。也许，大多数前端都在使用js html和 css，一个支持js html css的编辑器就足够了，但是，你永远无法预料自己将要使用什么语言，将会面临什么文件。这一切，在vim看来，都是文本而已，任何文本的编辑处理，纳入到 vim中，它和编辑其他文件没有差异。使用vim，你拥有的不是开发某一种语言的能力，而是一套通用的高效的文本编辑方法，工具。也正是因此，vim在鼠标已经流行了很多年，现代编辑器，IDE发展非常强劲的时代，依然没有被淘汰。 编程环境总在变化，语言自身也在发展，发展如此之快，IntelliJ IDEA的模式，在现在有效，不知道过多少年，它也许就不再有效了。</p>
+<h2 id="vim的优秀之处总结">vim的优秀之处总结</h2>
+<p>关于vim的神话，那大概只是一个传说。vim只是一个有特色的编辑器而已，也是一个非常值得拥有的工具，它定义了一套独特的文本编辑方案，熟悉它，可以让你在unix上获得自由，可以让你面对文本操作任务，随心所欲，指随意动。同样的，vim只能处理文本，它永远无法做到IDE可以实现的一些功能，但无论如何，都不能抹杀vim的优秀之处。</p>
+
+      
+    </div>
+    <section id='after_content_widget'><div class="widget" id="widget_after_content_wumiiRelatedItems>">
+<script type="text/javascript" id="wumiiRelatedItems"></script>
+</div><div class="widget" id="widget_after_content_post_footer_info>">
+<div class="panel panel-success">
+    <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
+    <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
+    <div class="panel-body">本文链接: <a href="/posts/the-advantage-of-vim.html">vim的优秀之处在哪里</a></div>
+</div></div><div class="widget" id="widget_after_content_ujian>">
+<div class="ujian-hook"></div>
+</div></section>
+    
+    
+        <footer id="post-meta">
+        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/vim/" class="label label-primary" itemprop="url"><span itemprop="title">vim</span></a></span> | <span class="time">最近更新:<time title="2014-07-10 19:48:45"datetime="2014-07-10 19:48:45"> 2014-07-10</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/the-advantage-of-vim.html#comments" id="uyan_count_unit" su="the-advantage-of-vim">暂无评论</a>
+</span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+    <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
+<ul class="pager">
+  
+  <li class="previous"><a href="/posts/php-history-overview.html" title="简单明了php版本历史">&larr; 简单明了php版本历史</a></li>
+  
+  
+  <li class="next"><a href="/posts/how-to-use-index-match-in-excel.html" title="excel中index match用法">excel中index match用法 &rarr;</a></li>
+  
+</ul></div><div class="widget" id="widget_after_post_related_posts>">
+<ul class="list-group"><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></li><li class="list-group-item"><a href="/posts/php-func-constant-define.html">php常量的说明</a></li><li class="list-group-item"><a href="/posts/the-advantage-of-vim.html">vim的优秀之处在哪里</a></li><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/markdown-tools-and-resources.html">markdown格式在日常中的使用及转化</a></li><li class="list-group-item"><a href="/posts/use-keyboard-in-excel.html">Excel中常用的快捷键总结</a></li></ul></div></section>    
+	<div id="comments">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<!-- UY END -->
+
+</div></div><!--wapper-->
+       </div><!-- ID main-col END -->
+       <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
+<div id="widget_search" class="widget panel panel-primary">
+    <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <div class="input-group">
+    <input class="form-control" id="searchbox" type="search" name="q" results="0" placeholder="search">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Go!</button>
+    </span>
+    <input type="hidden" name="q" value="site:blog.higrid.net">
+  </div>
+</form>
+</div>
+
+<div id="widget_category" class="widget panel panel-primary">
+  <div class="panel-heading">分类</div>  <div data-src='category' class='ajax_widgets'>正在加载...</div>
+</div>
+
+<div id="widget_recent_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近文章</div>  <div data-src='recent_posts' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_tagcloud" class="widget panel panel-primary">
+  <div class="panel-heading">标签云</div>  <div data-src='tagcloud' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_latest_update_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_random_posts" class="widget panel panel-primary">
+  <div class="panel-heading">随机文章</div>  <div class='hexo_random_posts' data-count=8></div></div>
+
+</aside>
+       <div class="clearfix"></div>
+     </div><!-- row END -->
+  </div>
+  <footer id="footer" class="container">
+  <div class="panel panel-info">
+  <section id='footer_widget'></section>  <div class="panel-footer">
+  <div id="site-info">
+    <span class='author'>
+  
+  &copy; 2013-2014 higrid
+  
+    &nbsp;&nbsp;</span>
+  
+  <span id='analytics-cnzz'>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</span>  </div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-10 19:48:45</em></span></div>
+</div>
+<div class="clearfix"></div>
+
+  </div>
+  </footer>
+  
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>        
+        <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
+            <script type="text/javascript">
+var uyan_config={
+     'url':'http://blog.higrid.net/posts/the-advantage-of-vim.html',
+'su':'the-advantage-of-vim'
+};
+_js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
+</script>
+
+    
+            <!--wumii_relatedItems-->
+
+<script type="text/javascript">
+    var wumiiPermaLink = "http://blog.higrid.net/posts/the-advantage-of-vim.html";
+    var wumiiTitle = "vim的优秀之处在哪里";
+    var wumiiTags = "vim";
+    var wumiiCategories = ["知识总结"];
+    var wumiiSitePrefix = "http://blog.higrid.net";
+    var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
+    _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});
+</script>
+<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+<img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+</a>
+    
+            
+<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1600048'});</script>
+<a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+    
+                
+        <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
+   var lang=["bsh", "c", "cc", "cpp", "cs", "csh", "cyc", "cv", "htm", "html",
+    "java", "js", "m", "mxml", "perl", "pl", "pm", "py", "rb", "sh",
+    "xhtml", "xml", "xsl"];
+   var pretty_base='';
+   $('script').each(function(){
+	var c = $(this).attr('src');
+	if (!c)
+	    return;
+	if (c.match(/(\/)?prettify(\.min)?\.js/i))
+	{
+	    var index = c.lastIndexOf('/');
+	    if (index != -1)
+		pretty_base = c.substr(0,index + 1);
+	    return false;
+	}
+   })
+   $('pre code').each(function(){
+	var c = $(this).attr('class')
+	if (!c)
+	    return;
+	c = c.match(/\s?(lang\-\w+)/i);
+	if (c && lang.indexOf(c[1]) == -1)
+	{
+	    lang.push(c[1]);
+	    $.getScript(pretty_base + c[1] + '.min.js');
+	}
+   })
+
+    $(window).load(function(){
+       $("pre").addClass("prettyprint");
+       prettyPrint();
+    })
+</script>    
+<script src="/js/chenall.js" type="text/javascript"></script>
+  </body>
+</html>

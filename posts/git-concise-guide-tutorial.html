@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>git常用操作命令 | H!Grid博客镜像站点</title>
+<meta name="author" content="higrid">
+
+<meta name="description" content="一开始GIT给人感觉很简单，但一用起来又觉得每个地方都捉襟见肘。其实git的学习曲线要比想象中的更为陡峭，有近20个常用命令，每个命令又有20个左右常用的参数，相互组合使用。要学好的话学习量绝对不低于新学一门语言和其常用类库，因其大多数操作都有相近的实现方式，但结果又各不相同，本篇是higrid收集的一些相关网络教程，以由易向难的顺序介绍。">
+
+<meta name="keywords" content="git, git资源, git工具">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta property="og:title" content="git常用操作命令"/>
+<meta property="og:site_name" content="H!Grid博客镜像站点"/>
+
+<!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
+<!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
+<!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
+
+<link rel="author" href="http://higrid.net" />
+<link href="/favicon.png" rel="icon">
+<link rel="alternate" href="/atom.xml" title="H!Grid博客镜像站点 Feed" type="application/atom+xml">
+
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<!--[if lt IE 9]>
+   <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
+   <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+   <script src="http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<link href="http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/js/respond.proxy.js"></script>
+   <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
+<script type="text/javascript">var site = {BASE_URI: '/'};var _js2load = [];</script>
+
+</head>
+<body>
+      <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">H!Grid博客镜像站点</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+  
+        <li><a href="/" title="主页">主页</a></li>      
+        <li><a href="/about/" title="关于">关于</a></li>      
+        <li><a href="/archives/" title="归档">归档</a></li>      
+      <li class='dropdown'>
+        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
+        <ul class='dropdown-menu'>
+    
+          <li><a href="//higrid.net" title="嗨网在线">嗨网在线</a></li>    
+          <li><a href="https://github.com/sheyi" title="gihtub">gihtub</a></li>    
+        </ul>
+      </li>
+    
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+      
+        <li><a href="https://twitter.com/higridnet">twitter</a></li>
+      
+      
+      
+      
+        <li><a href="https://github.com/sheyi/higrid">github</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id='content' class="container">
+     <div class="page-header-wrapper">
+      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+      <div class="page-header"><h1>H!Grid博客镜像站点 <small>基于PHP语言：建站更容易、更快速、更方便、更强悍</small></h1></div>
+     </div>
+     <div class="row">
+       <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
+      <section id='header_widget'></section>
+          <div id="wrapper"><article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title">git常用操作命令</h1>
+      
+        <span>发表于<time datetime="2014-07-03T11:41:11.000Z"> <a href="/posts/git-concise-guide-tutorial.html">2014-07-03</a></time></span>      
+    </header>
+    
+    <section id='before_content_widget'></section>
+    <div class="entry">
+      
+        <p>一开始GIT给人感觉很简单，但一用起来又觉得每个地方都捉襟见肘。其实git的学习曲线要比想象中的更为陡峭，有近20个常用命令，每个命令又有20个左右常用的参数，相互组合使用。要学好的话学习量绝对不低于新学一门语言和其常用类库，因其大多数操作都有相近的实现方式，但结果又各不相同，本篇是higrid收集的一些相关网络教程，以由易向难的顺序介绍。 </p>
+<a id="more"></a>
+
+<h2 id="Git工作原理:">Git工作原理:</h2>
+<ol>
+<li>分布式,每个克隆或更新远程仓库的用户都拥有一份最新的完整的仓库。</li>
+<li>分支结构,不要直接操作<code>remote</code>的远程分支,应该首先<code>checkout</code>一份到本地分支。远程分支是指与远程仓库上同步的分支。而你所有的操作应该是在你的本地分支上操作。</li>
+<li>时刻记得你在那个分支下工作,因为你切换到任何分支都不会改变本地目录</li>
+<li><code>origin</code>代表远程仓库,为默认的远程仓库别名</li>
+<li><strong>git</strong>的分支仅仅是一个提交的标记,而不是目录,与svn的目录式分支结构不同</li>
+<li>仓库的意义是整个代码仓库,本地分支/远程分支,都是你本地仓库中的分支</li>
+</ol>
+<h2 id="Git常用操作命令及解释">Git常用操作命令及解释</h2>
+<p>注:以下所有以<code>$</code>开头的,为命令行操作,<code>$</code>之后的是命令, <code>#</code>号之后是注释</p>
+<p>1.克隆一个仓库</p>
+<pre><code>$ git clone git@github.com:sheyi/higrid.git#相当于svn checkout
+</code></pre><p>然后进入仓库目录,运行如下命令来忽略git对于文件权限的检查</p>
+<pre><code>$ git config core.filemode false
+</code></pre><p>然后设置你的帐户和邮箱</p>
+<pre><code>$ git config user.name = &quot;higrid&quot;
+$ git config user.email = &quot;info@higrid.net&quot;
+</code></pre><p>2.抽取一个分支以及切换到一个分支(切记,要得到一个分支,应该先抽取它,把它抽取到<br>本地,生成一个本地分支) 命令格式 <code>git checkout 本地分支名 origin/远程分支名</code>,通常,本地分支名和远程分支名一样,当然,也可以不一样。</p>
+<pre><code>$ git checkout release/0.2 origin/release/0.2
+$ git checkout master origin/master
+$ git checkout master #切换分支也是使用checkout,只不过不再输入远程分支信息
+</code></pre><p>3.查看分支,注意,*号在那个分支名前面,就说明你目前处在那个分支下。<br> 查看本地分支:</p>
+<pre><code>$ git branch
+</code></pre><p>查看所有分支,包括你仓库中的远程分支:</p>
+<pre><code>$ git branch -a
+</code></pre><p>更新你本地仓库的所有分支和远程仓库的分支保持一致,主要是删掉本地仓库中与远程仓库相比较,已经不存在的分支:</p>
+<pre><code>$ git remote prune origin
+</code></pre><p>4.本地仓库分支的创建和删除</p>
+<pre><code>$ git branch 分支名 #创建一个本地分支
+$ git branch -d 分支名 #删除一个本地分支,参数 -D 强制删除,删除前要先切换到其它分支
+</code></pre><p>5.更新仓库但不将修改合并分支的修改</p>
+<pre><code>$ git fetch
+</code></pre><p>6.更新仓库且将修改合并到本地分支,这个最常用,相当于svn up</p>
+<pre><code>$ git pull
+</code></pre><p>7.查看状态,是否有提交,删除,更新等信息,如果看到大批文件权限有更新,请使用“git config core.filemode false” 来忽略权限检查</p>
+<pre><code>$ git status
+</code></pre><p>8.提交,注意:提交仅仅是将你的修改提交到你本地的仓库,而非远程</p>
+<pre><code>$ git commit -m ”提交注释&quot;
+</code></pre><p>如果之前未使用 git add 将修改的文件加入暂存区,可再加一个参数 -a 来将所有未暂存的修改提交</p>
+<p>9.推送到远程仓库,只有将你的修改或分支推送到远程仓库,其它人才能从该远程仓库获取</p>
+<pre><code>$ git push origin #推送当前分支到远程仓库,前提是远程仓库有这个分支
+$ git remote add origin git@server-name:path/repo-name.git 要关联一个远程库
+$ git push -u origin master #第一次推送master分支的所有内容， 此后就可以使用命令git push origin master推送最新修改；
+</code></pre><p>10.删除远程仓库中的分支</p>
+<pre><code>$ git push origin :远程分支名
+$ git push origin --delete &lt;branchName&gt;
+$ git push origin --delete tag &lt;tagname&gt;
+</code></pre><h2 id="Git工作流程">Git工作流程</h2>
+<ol>
+<li>生成你的公钥和私钥,将公钥发给git仓库管理员</li>
+<li>克隆一个仓库</li>
+<li>检出一个远程分支到本地分支</li>
+<li>在本地分支上进行开发工作并提交</li>
+<li>将你的提交推送到远程仓库</li>
+<li>要经常更新你的本地分支 <code>git pull</code></li>
+<li>对于开发人员，不要在develop分支上直接开发，创建feature分支并publish协同开发。</li>
+<li>对于开发人员，要经常合并常规开发分支develop到你的feature分支上，以降低冲突的积累。</li>
+<li>第7、8条参照git-flow分支模型来规划。</li>
+</ol>
+
+      
+    </div>
+    <section id='after_content_widget'><div class="widget" id="widget_after_content_wumiiRelatedItems>">
+<script type="text/javascript" id="wumiiRelatedItems"></script>
+</div><div class="widget" id="widget_after_content_post_footer_info>">
+<div class="panel panel-success">
+    <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
+    <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
+    <div class="panel-body">本文链接: <a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></div>
+</div></div><div class="widget" id="widget_after_content_ujian>">
+<div class="ujian-hook"></div>
+</div></section>
+    
+    
+        <footer id="post-meta">
+        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a><a href="/tags/github/" class="label label-success" itemprop="url"><span itemprop="title">github</span></a></span> | <span class="time">最近更新:<time title="2014-07-05 18:56:37"datetime="2014-07-05 18:56:37"> 2014-07-05</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/git-concise-guide-tutorial.html#comments" id="uyan_count_unit" su="git-concise-guide-tutorial">暂无评论</a>
+</span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+    <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
+<ul class="pager">
+  
+  <li class="previous"><a href="/posts/install-composer-on-windows.html" title="在Windows系统中安裝使用composer">&larr; 在Windows系统中安裝使用composer</a></li>
+  
+  
+  <li class="next"><a href="/posts/git-commit-skills.html" title="Git commit 之注释的技巧">Git commit 之注释的技巧 &rarr;</a></li>
+  
+</ul></div><div class="widget" id="widget_after_post_related_posts>">
+<ul class="list-group"><li class="list-group-item"><a href="/posts/git-commit-skills.html">Git commit 之注释的技巧</a></li><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/php-func-constant-define.html">php常量的说明</a></li><li class="list-group-item"><a href="/posts/markdown-tools-and-resources.html">markdown格式在日常中的使用及转化</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></li></ul></div></section>    
+	<div id="comments">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<!-- UY END -->
+
+</div></div><!--wapper-->
+       </div><!-- ID main-col END -->
+       <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
+<div id="widget_search" class="widget panel panel-primary">
+    <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <div class="input-group">
+    <input class="form-control" id="searchbox" type="search" name="q" results="0" placeholder="search">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Go!</button>
+    </span>
+    <input type="hidden" name="q" value="site:blog.higrid.net">
+  </div>
+</form>
+</div>
+
+<div id="widget_category" class="widget panel panel-primary">
+  <div class="panel-heading">分类</div>  <div data-src='category' class='ajax_widgets'>正在加载...</div>
+</div>
+
+<div id="widget_recent_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近文章</div>  <div data-src='recent_posts' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_tagcloud" class="widget panel panel-primary">
+  <div class="panel-heading">标签云</div>  <div data-src='tagcloud' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_latest_update_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_random_posts" class="widget panel panel-primary">
+  <div class="panel-heading">随机文章</div>  <div class='hexo_random_posts' data-count=8></div></div>
+
+</aside>
+       <div class="clearfix"></div>
+     </div><!-- row END -->
+  </div>
+  <footer id="footer" class="container">
+  <div class="panel panel-info">
+  <section id='footer_widget'></section>  <div class="panel-footer">
+  <div id="site-info">
+    <span class='author'>
+  
+  &copy; 2013-2014 higrid
+  
+    &nbsp;&nbsp;</span>
+  
+  <span id='analytics-cnzz'>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</span>  </div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-05 18:56:37</em></span></div>
+</div>
+<div class="clearfix"></div>
+
+  </div>
+  </footer>
+  
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>        
+        <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
+            <script type="text/javascript">
+var uyan_config={
+     'url':'http://blog.higrid.net/posts/git-concise-guide-tutorial.html',
+'su':'git-concise-guide-tutorial'
+};
+_js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
+</script>
+
+    
+            <!--wumii_relatedItems-->
+
+<script type="text/javascript">
+    var wumiiPermaLink = "http://blog.higrid.net/posts/git-concise-guide-tutorial.html";
+    var wumiiTitle = "git常用操作命令";
+    var wumiiTags = "git,github";
+    var wumiiCategories = ["知识总结"];
+    var wumiiSitePrefix = "http://blog.higrid.net";
+    var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
+    _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});
+</script>
+<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+<img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+</a>
+    
+            
+<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1600048'});</script>
+<a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+    
+                
+        <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
+   var lang=["bsh", "c", "cc", "cpp", "cs", "csh", "cyc", "cv", "htm", "html",
+    "java", "js", "m", "mxml", "perl", "pl", "pm", "py", "rb", "sh",
+    "xhtml", "xml", "xsl"];
+   var pretty_base='';
+   $('script').each(function(){
+	var c = $(this).attr('src');
+	if (!c)
+	    return;
+	if (c.match(/(\/)?prettify(\.min)?\.js/i))
+	{
+	    var index = c.lastIndexOf('/');
+	    if (index != -1)
+		pretty_base = c.substr(0,index + 1);
+	    return false;
+	}
+   })
+   $('pre code').each(function(){
+	var c = $(this).attr('class')
+	if (!c)
+	    return;
+	c = c.match(/\s?(lang\-\w+)/i);
+	if (c && lang.indexOf(c[1]) == -1)
+	{
+	    lang.push(c[1]);
+	    $.getScript(pretty_base + c[1] + '.min.js');
+	}
+   })
+
+    $(window).load(function(){
+       $("pre").addClass("prettyprint");
+       prettyPrint();
+    })
+</script>    
+<script src="/js/chenall.js" type="text/javascript"></script>
+  </body>
+</html>

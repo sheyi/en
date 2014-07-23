@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>excel中index match用法 | H!Grid博客镜像站点</title>
+<meta name="author" content="higrid">
+
+<meta name="description" content="在工作中，我们需要处理大量数据，查询与引用函数是非常常用一类函数，灵活的运用它们，可以提高工作效率。当需要在数据清单或表格中查找特定数值，或者需要查找某一单元格的引用时，可以使用查询和引用工作表函数。HiGrid采用简单的例子介绍这些函数的高级使用方法，非常容易理解index函数和match函数的使用方法">
+
+<meta name="keywords" content="excel中index match用法">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta property="og:title" content="excel中index match用法"/>
+<meta property="og:site_name" content="H!Grid博客镜像站点"/>
+
+<!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
+<!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
+<!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
+
+<link rel="author" href="http://higrid.net" />
+<link href="/favicon.png" rel="icon">
+<link rel="alternate" href="/atom.xml" title="H!Grid博客镜像站点 Feed" type="application/atom+xml">
+
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<!--[if lt IE 9]>
+   <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
+   <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+   <script src="http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<link href="http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/js/respond.proxy.js"></script>
+   <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
+<script type="text/javascript">var site = {BASE_URI: '/'};var _js2load = [];</script>
+
+</head>
+<body>
+      <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">H!Grid博客镜像站点</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+  
+        <li><a href="/" title="主页">主页</a></li>      
+        <li><a href="/about/" title="关于">关于</a></li>      
+        <li><a href="/archives/" title="归档">归档</a></li>      
+      <li class='dropdown'>
+        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
+        <ul class='dropdown-menu'>
+    
+          <li><a href="//higrid.net" title="嗨网在线">嗨网在线</a></li>    
+          <li><a href="https://github.com/sheyi" title="gihtub">gihtub</a></li>    
+        </ul>
+      </li>
+    
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+      
+        <li><a href="https://twitter.com/higridnet">twitter</a></li>
+      
+      
+      
+      
+        <li><a href="https://github.com/sheyi/higrid">github</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id='content' class="container">
+     <div class="page-header-wrapper">
+      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+      <div class="page-header"><h1>H!Grid博客镜像站点 <small>基于PHP语言：建站更容易、更快速、更方便、更强悍</small></h1></div>
+     </div>
+     <div class="row">
+       <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
+      <section id='header_widget'></section>
+          <div id="wrapper"><article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title">excel中index match用法</h1>
+      
+        <span>发表于<time datetime="2013-10-29T06:37:59.000Z"> <a href="/posts/how-to-use-index-match-in-excel.html">2013-10-29</a></time></span>      
+    </header>
+    
+    <section id='before_content_widget'></section>
+    <div class="entry">
+      
+        <p>在工作中，我们需要处理大量数据，查询与引用函数是非常常用一类函数，灵活的运用它们，可以提高工作效率。当需要在数据清单或表格中查找特定数值，或者需要查找某一单元格的引用时，可以使用查询和引用工作表函数。HiGrid采用简单的例子介绍这些函数的高级使用方法，非常容易理解index函数和match函数的使用方法<br><a id="more"></a> </p>
+<h2 id="MATCH函数和INDEX函数的初级用法">MATCH函数和INDEX函数的初级用法</h2>
+<p>假设有这样一个excel表格，这里将数据进行了简化，如果数据更多，<strong>index和match</strong>函数的使用方法是类似的，但多的数据更显示出match函数和index函数的威力。</p>
+<p><img src="http://i.imgur.com/tiRMKJW.png" alt="截图"></p>
+<p>现在higrid想在上图中的<code>Excel</code>数据中查找 <code>hicms</code>是什么版本，可以使用<code>vlookup</code>，相对而言 <strong>vlookup函数</strong> 更简单，当然也可以使用match函数和index函数来查找。一般是将这两个函数组合起来应用，返回列表或数组中的指定行列的值。</p>
+<p><img src="http://i.imgur.com/3ER2W50.png" alt="截图"></p>
+<ul>
+<li>MATCH(查找值，查找范围，[查找类型])，excel帮助文件中是 Match(lookup_value,lookup_array,match_type);返回匹配的数值在数组中的位置而不是值</li>
+<li>INDEX(引用区域,行号,[列号])，excel帮助文件中是Index(Array,Row_num,Column_num);返回数组中某一行某一列的值</li>
+</ul>
+<h2 id="INDEX函数使用方法">INDEX函数使用方法</h2>
+<p><strong>index函数</strong> 的解释：Array:数组 Row_num：行号 Column_num:列号 这里要说明的是，Row_num，Column_num 指的相对这个数组中的行与列，而不是相对整个Excel。 如Array=A$2:B$5 那么 1&lt;=Row_num&lt;=4,1&lt;=Column_num&lt;=2。<br>INDEX函数的功能就是返回指定单元格区域或数组常量。如果同时使用参数行号和列号，函数INDEX返回行号和列号交叉处的单元格中的值。</p>
+<p>在INDEX数组应用中：</p>
+<ol>
+<li>第2或第3参数数组各个数值大小和个数表示原始数据行或列方向的位置和个数；</li>
+<li>第2或第3参数字符实际位置决定原始数据位置的字符最终的行、列放置位置；</li>
+<li>第2参数为水平数组，则行列置换，第2参数为垂直数组，则行列不置换；反之，不置换。</li>
+<li>第3参数为垂直数组，则行列置换，第3参数为水平数组，则行列不置换；反之，不置换。</li>
+<li>在行列置换的情况下，第2、第3数组参数为2,1或2;1，表示将原始数据首行或首列置换为第2列或第2行；为1,2或1;2，表示将原始数据首行或首列置换为为首列或首行；</li>
+<li>当第2参数为垂直数组，则第3参数应为水平数组（换种说法就是：第2参数和第3参数分隔符必须不同），否则表格会乱，除非有特殊需要；</li>
+<li>当第2参数的数组组数和第1参数行组数相同时，第三参数数组组数就应该和第一参数的列组数相同，或者说当第2参数的数组组数和第1参数列组数相同时，第三参数数组组数就应该和第一参数的行组数相同，这样所有的原始置换数据才不会丢失；</li>
+<li>INDEX（原始数据行列数组，行组数，列组数），其中行、列组数参数携带着原始数据位置、排列转换后位置、与原始数据对应的的行列组数等信息。</li>
+</ol>
+<p>只要你对以上总结的8条规律牢记在心，那么无论置换多复杂的表格，你都可以反向层层分解，见招拆招，做到心中有数。</p>
+<h2 id="Match函数">Match函数</h2>
+<p><strong>match函数</strong> 的功能如下：<br>lookup_value,就是要寻找的值 loopup_array,与寻找的值进行匹配的数组 match_type, 匹配类型。-1代表查找大于或等于lookup_value的值；0代表查找等于lookup_value的第一个值；1代表小于或等于lookup_value的值。</p>
+<p>用起来很简单，要注意的是，比如有一列是姓名 为中文，这个Excel里面，这个中文后面会有空格，这个时候匹配的话，就有可能匹配不了解决方案是，加通配符“<em>”，就能解决这个问题。 如 Match(A1&amp;”</em>“,B$1:B$5,0);(在B1加个$符代表是绝对位置)。</p>
+<h2 id="index_match函数与vlookup的区别">index match函数与vlookup的区别</h2>
+<p>很多人也许对以上index函数和match函数的使用方法不以为然，因为使用vlookup看样子更简单，实际上index match比vlookup很多方面更胜出。</p>
+<h3 id="index_match函数效率更高">index match函数效率更高</h3>
+<p>index和match结合的一个主要优势是效率更高，因为组合不需要查找整个数组，只需要查找 <strong>1列</strong>。而vlookup需要查找整个数组，速度更慢。</p>
+<h3 id="index_match函数可以向左查找">index match函数可以向左查找</h3>
+<p>index和match结合的另一个优势是可以向左查找。<br>很多网站对excel这个非常关键的功能并没有介绍，。。。</p>
+<p>—to be continued</p>
+
+      
+    </div>
+    <section id='after_content_widget'><div class="widget" id="widget_after_content_wumiiRelatedItems>">
+<script type="text/javascript" id="wumiiRelatedItems"></script>
+</div><div class="widget" id="widget_after_content_post_footer_info>">
+<div class="panel panel-success">
+    <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
+    <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
+    <div class="panel-body">本文链接: <a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></div>
+</div></div><div class="widget" id="widget_after_content_ujian>">
+<div class="ujian-hook"></div>
+</div></section>
+    
+    
+        <footer id="post-meta">
+        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/excel/" class="label label-primary" itemprop="url"><span itemprop="title">excel</span></a><a href="/tags/functions/" class="label label-success" itemprop="url"><span itemprop="title">functions</span></a></span> | <span class="time">最近更新:<time title="2014-07-10 19:48:45"datetime="2014-07-10 19:48:45"> 2014-07-10</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/how-to-use-index-match-in-excel.html#comments" id="uyan_count_unit" su="how-to-use-index-match-in-excel">暂无评论</a>
+</span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+    <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
+<ul class="pager">
+  
+  <li class="previous"><a href="/posts/the-advantage-of-vim.html" title="vim的优秀之处在哪里">&larr; vim的优秀之处在哪里</a></li>
+  
+  
+</ul></div><div class="widget" id="widget_after_post_related_posts>">
+<ul class="list-group"><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/the-advantage-of-vim.html">vim的优秀之处在哪里</a></li><li class="list-group-item"><a href="/posts/linux-basic-command.html">linux基础教程及常用配置</a></li><li class="list-group-item"><a href="/posts/markdown-tools-and-resources.html">markdown格式在日常中的使用及转化</a></li><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/php-func-constant-define.html">php常量的说明</a></li></ul></div></section>    
+	<div id="comments">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<!-- UY END -->
+
+</div></div><!--wapper-->
+       </div><!-- ID main-col END -->
+       <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
+<div id="widget_search" class="widget panel panel-primary">
+    <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <div class="input-group">
+    <input class="form-control" id="searchbox" type="search" name="q" results="0" placeholder="search">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Go!</button>
+    </span>
+    <input type="hidden" name="q" value="site:blog.higrid.net">
+  </div>
+</form>
+</div>
+
+<div id="widget_category" class="widget panel panel-primary">
+  <div class="panel-heading">分类</div>  <div data-src='category' class='ajax_widgets'>正在加载...</div>
+</div>
+
+<div id="widget_recent_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近文章</div>  <div data-src='recent_posts' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_tagcloud" class="widget panel panel-primary">
+  <div class="panel-heading">标签云</div>  <div data-src='tagcloud' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_latest_update_posts" class="widget panel panel-primary">
+  <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
+
+<div id="widget_random_posts" class="widget panel panel-primary">
+  <div class="panel-heading">随机文章</div>  <div class='hexo_random_posts' data-count=8></div></div>
+
+</aside>
+       <div class="clearfix"></div>
+     </div><!-- row END -->
+  </div>
+  <footer id="footer" class="container">
+  <div class="panel panel-info">
+  <section id='footer_widget'></section>  <div class="panel-footer">
+  <div id="site-info">
+    <span class='author'>
+  
+  &copy; 2013-2014 higrid
+  
+    &nbsp;&nbsp;</span>
+  
+  <span id='analytics-cnzz'>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</span>  </div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-10 19:48:45</em></span></div>
+</div>
+<div class="clearfix"></div>
+
+  </div>
+  </footer>
+  
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>        
+        <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
+            <script type="text/javascript">
+var uyan_config={
+     'url':'http://blog.higrid.net/posts/how-to-use-index-match-in-excel.html',
+'su':'how-to-use-index-match-in-excel'
+};
+_js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
+</script>
+
+    
+            <!--wumii_relatedItems-->
+
+<script type="text/javascript">
+    var wumiiPermaLink = "http://blog.higrid.net/posts/how-to-use-index-match-in-excel.html";
+    var wumiiTitle = "excel中index match用法";
+    var wumiiTags = "excel,functions";
+    var wumiiCategories = ["知识总结"];
+    var wumiiSitePrefix = "http://blog.higrid.net";
+    var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
+    _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});
+</script>
+<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+<img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
+</a>
+    
+            
+<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1600048'});</script>
+<a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+    
+                
+        <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
+   var lang=["bsh", "c", "cc", "cpp", "cs", "csh", "cyc", "cv", "htm", "html",
+    "java", "js", "m", "mxml", "perl", "pl", "pm", "py", "rb", "sh",
+    "xhtml", "xml", "xsl"];
+   var pretty_base='';
+   $('script').each(function(){
+	var c = $(this).attr('src');
+	if (!c)
+	    return;
+	if (c.match(/(\/)?prettify(\.min)?\.js/i))
+	{
+	    var index = c.lastIndexOf('/');
+	    if (index != -1)
+		pretty_base = c.substr(0,index + 1);
+	    return false;
+	}
+   })
+   $('pre code').each(function(){
+	var c = $(this).attr('class')
+	if (!c)
+	    return;
+	c = c.match(/\s?(lang\-\w+)/i);
+	if (c && lang.indexOf(c[1]) == -1)
+	{
+	    lang.push(c[1]);
+	    $.getScript(pretty_base + c[1] + '.min.js');
+	}
+   })
+
+    $(window).load(function(){
+       $("pre").addClass("prettyprint");
+       prettyPrint();
+    })
+</script>    
+<script src="/js/chenall.js" type="text/javascript"></script>
+  </body>
+</html>

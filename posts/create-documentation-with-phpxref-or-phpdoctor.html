@@ -6,15 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>php常量的说明 | H!Grid博客镜像站点</title>
+<title>使用PHPXref或PHPDoctor自动生成注释和文档 | H!Grid博客镜像站点</title>
 <meta name="author" content="higrid">
 
-<meta name="description" content="php中的常量是一个简单值的标识符（名字）。如同其名称所暗示的，在脚本执行期间该值不能改变（除了所谓的魔术常量，它们其实不是常量）。常量默认为大小写敏感。通常常量标识符总是大写的。">
+<meta name="description" content="随着项目管理越来越智能化，特别是现在PHP项目很多的情况，采用代码中的doc注释来生成文档不失为一个好办法。只要在写代码的时候，记得把doc注释写详细、规范，生成出来的文档就很好看了。使用比较多的有phpDocumentor\doxygen等，但使用方法用法有些复杂，这里Higrid推荐到两款非常简单的PHP文档生成工具，在windows平台也非常好用。">
 
-<meta name="keywords" content="PHP常量, php define, php const">
+<meta name="keywords" content="Excel快捷键">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<meta property="og:title" content="php常量的说明"/>
+<meta property="og:title" content="使用PHPXref或PHPDoctor自动生成注释和文档"/>
 <meta property="og:site_name" content="H!Grid博客镜像站点"/>
 
 <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
@@ -100,145 +100,53 @@
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title">php常量的说明</h1>
+      <h1 class="title">使用PHPXref或PHPDoctor自动生成注释和文档</h1>
       
-        <span>发表于<time datetime="2014-07-10T14:46:04.000Z"> <a href="/posts/php-func-constant-define.html">2014-07-10</a></time></span>      
+        <span>发表于<time datetime="2014-07-28T10:50:17.000Z"> <a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html">2014-07-28</a></time></span>      
     </header>
     
     <section id='before_content_widget'></section>
     <div class="entry">
       
-        <p>php中的常量是一个简单值的标识符（名字）。如同其名称所暗示的，在脚本执行期间该值不能改变（除了所谓的魔术常量，它们其实不是常量）。常量默认为大小写敏感。通常常量标识符总是大写的。 </p>
-<a id="more"></a> 
-
-<h2 id="php常量">php常量</h2>
-<p>可以用 <code>define()</code> 函数来定义常量。在 PHP 5.3.0 以后，可以使用 <code>const</code> 关键字在类定义的外部定义常量，先前版本<code>const</code> 关键字只能在类（class）中使用。一个常量一旦被定义，就不能再改变或者取消定义。<br>常量只能包含标量数据（boolean，integer，float 和 string）。 可以定义 resource 常量，但应尽量避免，因为会造成不可预料的结果。<br>可以简单的通过指定其名字来取得常量的值，与变量不同，不应该在常量前面加上 $ 符号。如果常量名是动态的，也可以用函数<code>constant()</code> 来获取常量的值。用<code>get_defined_constants()</code>可以获得所有已定义的常量列表。</p>
-<p>常量和变量有如下不同的常量规则：</p>
+        <p> 随着项目管理越来越智能化，特别是现在PHP项目很多的情况，采用代码中的doc注释来生成文档不失为一个好办法。只要在写代码的时候，记得把doc注释写详细、规范，生成出来的文档就很好看了。使用比较多的有phpDocumentor\doxygen等，但使用方法用法有些复杂，这里Higrid推荐到两款非常简单的PHP文档生成工具，在windows平台也非常好用。</p>
+<h2 id="一、phpxref">一、phpxref</h2>
+<p><strong>PHPXref</strong>是一个易用级的PHP项目文档生成工具，它生成Html的文档—-结构清晰、明了。PHPXref可以方便的在不同平台下（Linux with Perl，Win32 with EXE）帮助你生成某一目录下所有php文件的“资源”索引文档。这些“资源”，包括：Class（类）、Function（函数）、Variable（变量）、Constant（常量）…..。PHPXref给我们列出了这些资源的定义与引用的详细情况。我们可以很方便地找到某一个函数（变量）在何处被定义，在何处被调用（引用）。<br>这里以Wordpress为例，它能Wordpress中所有的函数、变量、常量等分类记录，生成一个HTML网页列表，你可以轻松地在这个列表中找到某个函数在什么位置被定义，在什么位置被引用。如果你是Wordpress插件开发者或者想学习研究Wordpress的人，项目文档的作用比较明显。 PHPXref官方有个已经制作好的Wordpress的分析文档：<a href="http://phpxref.com/xref/wordpress/" target="_blank" rel="external">http://phpxref.com/xref/wordpress/</a>   ，此外，PHPXref还制作了多种PHP程序的分析文档，有兴趣的可以Google站内搜索一下。<br> <a id="more"></a><br>PHPXref的主要功能包括：</p>
+<ol>
+<li>文件管理。无论要找什么文件，用它能很快地搜索到，如果你的文件中有符合语法规则的注释，PHPXref还能将它列在文件名的旁边，更容易了解这个文件的功能用途，也不用为了找一个文件翻遍整个文件夹，打开每个文件查找注释了。</li>
+<li>函数、变量、常量、类管理。Wordpress内置了多种功能强大的函数、类，无论是字符处理还是远程URL读取等都有现成的函数，但我们往往 不知道这个函数能在Wordpress里面找到，现在容易多了，搜索一下就找到了，如果在开发过程中遇到某个Wordpress函数，不知道它是干什么用 的，这时候就得找到这个函数在哪里定义的，可是Wordpress里面上百个文件上哪找去？还是用PHPXref好了。</li>
+<li>文件包含管理。Wordpress中需要很多 include，require包含别的文件，但偶尔也会遇到重复包含导致出错，虽然require_once可以解决，但我们也最好要了解某个脚本包含 了哪些文件，要调用这个文件时也心中有数。PHPXref提供了每个文件的包含文件列表和被包含的文件。</li>
+<li>源代码高亮。这个功能也是比较实用的，但在实际测试中偶尔会出错。</li>
+<li>出色的关联功能。在浏览源代码时，将鼠标指到某个函数名，就会在鼠标旁边出现函数的定义页面，以及被使用次数，此外，还对使用较多的变量名，也是可以直接有个页面显示所有的关于这个变量的使用情况。</li>
+</ol>
+<p>简介下windows下其使用过程：</p>
 <ul>
-<li>常量前面没有美元符号<code>（$）</code>； </li>
-<li>常量只能用<code>define()</code> 函数定义，而不能通过赋值语句； </li>
-<li>常量可以不用理会变量的作用域而在任何地方定义和访问； </li>
-<li>常量一旦定义就不能被重新定义或者取消定义； </li>
-<li>常量的值只能是标量。</li>
-<li>以字母或者下划线开始，后面跟着字母，数字，下划线。</li>
-<li>常量的值不能有任何操作，不能包含任何变量等。</li>
+<li>1、下载：官方网站：<a href="http://phpxref.sourceforge.net/" target="_blank" rel="external">phpxref官方sf网站</a></li>
+<li>2、使用（以下载windows版本为例）：通过以上下载你将得phpxref-0.7-win32.zip压缩包。<ul>
+<li>步骤一：解压phpxref-0.7-win32.zip。进入phpxref-0.7-win32（注：不用安装的，所以你不用习惯性的去点击.exe可执行文件），你将看一个名为：source的目录—它很关键；</li>
+<li>步骤二：复制你的项目文件到上面提到的source目录。</li>
+<li>步骤三：双击phpxref.exe；</li>
+<li>步骤四：如果项目比较大，请耐心等待数秒钟。</li>
+<li>步骤五：进入和source目录同级的output目录，你将看到一些东西。呵呵，双击index.html开始观看你的项目文档,去尝试吧，它能告诉你的很多哦。</li>
 </ul>
-<p>php的常量有几种类型：</p>
-<h3 id="php普通常量">php普通常量</h3>
-<p>普通常量就是使用<code>define</code> 来进行的常量设置。比如</p>
-<pre><code>define(&quot;FOO&quot;,     &quot;something&quot;);
-define(&quot;FOO2&quot;,    &quot;something else&quot;);
-define(&quot;FOO_BAR&quot;, &quot;something more&quot;);
-</code></pre><p>在5.3之后，普通常量也支持通过const来进行设置</p>
-<pre><code>&lt;?php
-const FOO = &quot;something&quot;;
-
-echo FOO;
-</code></pre><h3 id="类常量">类常量</h3>
-<p>类常量是使用const在类的内部进行设置。</p>
-<p>这种常量可以使用类名，也可以使用实例化来获取。</p>
-<pre><code>&lt;?php
-
-class A
-{
-        const con = &#39;Acon&#39;;
-}
-
-echo A::con;
-
-$a = new A();
-echo $a::con;
-</code></pre><p>使用const使得代码简单易读，const本身就是一个语言结构，而define是一个函数。另外const在编译时要比define快很多,还有如下区别：</p>
-<ul>
-<li>const用于类成员变量的定义，一经定义，不可修改。define不可用于类成员变量的定义，可用于全局常量。</li>
-<li>const可在类中使用，define不能。</li>
-<li>const不能在条件语句中定义常量。</li>
-<li>const采用一个普通的常量名称，define可以采用表达式作为名称。</li>
-<li>const只能接受静态的标量，而define可以采用任何表达式。</li>
-<li>const定义的常量时大小写敏感的，而define可通过第三个参数（为true表示大小写不敏感）来指定大小写是否敏感。</li>
+</li>
 </ul>
-<h3 id="魔术常量">魔术常量</h3>
-<p>php的魔术常量实际上不是常量，而是一种预定义常量。</p>
-<p>有8个魔术常量</p>
-<table>
-<thead>
-<tr>
-<th>常量</th>
-<th>意义           </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>__LINE__</td>
-<td>文件中的当前行号</td>
-</tr>
-<tr>
-<td>__FILE__</td>
-<td>文件的完整路径和文件名</td>
-</tr>
-<tr>
-<td>__DIR__</td>
-<td>文件所在的目录</td>
-</tr>
-<tr>
-<td>__FUNCTION__</td>
-<td>函数名字</td>
-</tr>
-<tr>
-<td>__CLASS__</td>
-<td>类名</td>
-</tr>
-<tr>
-<td>__TRAIT__</td>
-<td>Trait的名字，Trait的概念是5.4之后才加上的，所以这个魔术常量也是5.4之后才有的。</td>
-</tr>
-<tr>
-<td>__METHOD__</td>
-<td>类的方法名</td>
-</tr>
-<tr>
-<td>__NAMESPACE__</td>
-<td>当前命名空间名称，命名空间是5.3之后加上的，所以这个魔术常量是5.3之后才有的。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="预定义常量">预定义常量</h2>
-<p>在php的内核中有一些是<a href="http://www.php.net/manual/zh/reserved.constants.php" target="_blank" rel="external">预定义常量</a>。</p>
-<p>经常使用的一些预定义常量有：</p>
-<table>
-<thead>
-<tr>
-<th>常量</th>
-<th>意义           </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PHP_VERSION</td>
-<td>PHP的版本</td>
-</tr>
-<tr>
-<td>PHP_OS</td>
-<td>当前运行php的操作系统（win/linux）</td>
-</tr>
-<tr>
-<td>PHP_SAPI</td>
-<td>当前运行php的API环境（cli/cgi）</td>
-</tr>
-<tr>
-<td>PHP_EOL</td>
-<td>换行</td>
-</tr>
-<tr>
-<td>DEFAULT_INCLUDE_PATH</td>
-<td>默认的include路径</td>
-</tr>
-<tr>
-<td>PHP_EXTENSION_DIR</td>
-<td>PHP扩展地址</td>
-</tr>
-</tbody>
-</table>
+<p>PHPXref还提供了在Linux下生成文档的版本，但我很少用，也没有去测试了，我想更多数人需要的还是Win系统下的，如果有需要，把Win下生成的文档可以搬到服务器上去供大家访问。但PHPxref生成的文档实在太大了，一个1.2MB的Wordpress(压缩包)，解压后再生成文档，居然要80多 MB的位置！压缩完后也需要接近20MB。 除了用PHPXref来生成已有的Wordpress或其他PHP示范程序（如Discuz）进行学习外，用PHPXref来生成自己制作的PHP 程序，进行检验错误或者是整理代码资源也很有用</p>
+<h2 id="二、PHP_Doctor">二、PHP Doctor</h2>
+<ol>
+<li>安装php支持（若你有php环境支持，可以略去），设置环境变量path，把php 的安装路径加上，比如php 安装在d:/php5/</li>
+<li>下载<strong>phpdoctor</strong>，可以去官网下载 <a href="http://peej.github.com/phpdoctor/，把下载的压缩包解压到任何地方" target="_blank" rel="external">http://peej.github.com/phpdoctor/，把下载的压缩包解压到任何地方</a></li>
+<li><p>配置phpdoctor, phpdoctor 最基本的配置，复制一个ini文件进行就该就好</p>
+<pre><code> //源码路径，比如您的源码路径d:work/phptest,如下设置
+ source_path=“d:work/phptest”
+ //生成的html 文档保存路径,默认是保存在当前目录下apidocs(系统自动创建)，可以更改为其他目录，比如
+ d = &quot;apidocs&quot;或  d = &quot;d:work/doc&quot;
+</code></pre></li>
+<li><p>生成文档</p>
+</li>
+</ol>
+<p>打开你的cmd,先切换到你的phpdoctor 安装路径，然后执行下面代码</p>
+<pre><code>php phpdoc.php &lt;config_file&gt; 
+</code></pre><p>higrid.net 站点的api文档就是这么生成的，详见<a href="http://higrid.net/docs/higridapi" target="_blank" rel="external">http://higrid.net/docs/higridapi</a><br>是不是非常简单？！</p>
 
       
     </div>
@@ -248,15 +156,15 @@ echo $a::con;
 <div class="panel panel-success">
     <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
     <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
-    <div class="panel-body">本文链接: <a href="/posts/php-func-constant-define.html">php常量的说明</a></div>
+    <div class="panel-body">本文链接: <a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html">使用PHPXref或PHPDoctor自动生成注释和文档</a></div>
 </div></div><div class="widget" id="widget_after_content_ujian>">
 <div class="ujian-hook"></div>
 </div></section>
     
     
         <footer id="post-meta">
-        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/php/" class="label label-primary" itemprop="url"><span itemprop="title">php</span></a><a href="/tags/教程/" class="label label-success" itemprop="url"><span itemprop="title">教程</span></a></span> | <span class="time">最近更新:<time title="2014-07-10 19:46:40"datetime="2014-07-10 19:46:40"> 2014-07-10</time></span> | <span class="comment-link">
-<a href="http://blog.higrid.net/posts/php-func-constant-define.html#comments" id="uyan_count_unit" su="php-func-constant-define">暂无评论</a>
+        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/建站知识/" itemprop="url"><span itemprop="title" >建站知识</span></a></li></span><span class="breadcrumb"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/php/" class="label label-primary" itemprop="url"><span itemprop="title">php</span></a><a href="/tags/教程/" class="label label-success" itemprop="url"><span itemprop="title">教程</span></a></span> | <span class="time">最近更新:<time title="2014-07-28 15:53:57"datetime="2014-07-28 15:53:57"> 2014-07-28</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/create-documentation-with-phpxref-or-phpdoctor.html#comments" id="uyan_count_unit" su="create-documentation-with-phpxref-or-phpdoctor">暂无评论</a>
 </span>
         </footer>
     
@@ -269,13 +177,11 @@ echo $a::con;
     <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
 <ul class="pager">
   
-  <li class="previous"><a href="/posts/linux-search-files.html" title="Linux的查找命令find和locate命令">&larr; Linux的查找命令find和locate命令</a></li>
   
-  
-  <li class="next"><a href="/posts/linux-basic-command.html" title="linux基础教程及常用配置">linux基础教程及常用配置 &rarr;</a></li>
+  <li class="next"><a href="/posts/use-keyboard-in-excel.html" title="Excel中常用的快捷键总结">Excel中常用的快捷键总结 &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/markdown-tools-and-resources.html">markdown格式在日常中的使用及转化</a></li><li class="list-group-item"><a href="/posts/linux-basic-command.html">linux基础教程及常用配置</a></li><li class="list-group-item"><a href="/posts/git-commit-skills.html">Git commit 之注释的技巧</a></li><li class="list-group-item"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></li><li class="list-group-item"><a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html">使用PHPXref或PHPDoctor自动生成注释和文档</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/posts/php-func-constant-define.html">php常量的说明</a></li><li class="list-group-item"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></li><li class="list-group-item"><a href="/posts/linux-basic-command.html">linux基础教程及常用配置</a></li><li class="list-group-item"><a href="/posts/git-pull-push-from-multiple-remote-locations.html">git与多个远程仓库同步</a></li><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li></ul></div></section>    
 	<div id="comments">
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
@@ -329,7 +235,7 @@ echo $a::con;
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-10 19:46:40</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-28 15:53:57</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -340,8 +246,8 @@ echo $a::con;
         <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
             <script type="text/javascript">
 var uyan_config={
-     'url':'http://blog.higrid.net/posts/php-func-constant-define.html',
-'su':'php-func-constant-define'
+     'url':'http://blog.higrid.net/posts/create-documentation-with-phpxref-or-phpdoctor.html',
+'su':'create-documentation-with-phpxref-or-phpdoctor'
 };
 _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
 </script>
@@ -350,10 +256,10 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
             <!--wumii_relatedItems-->
 
 <script type="text/javascript">
-    var wumiiPermaLink = "http://blog.higrid.net/posts/php-func-constant-define.html";
-    var wumiiTitle = "php常量的说明";
+    var wumiiPermaLink = "http://blog.higrid.net/posts/create-documentation-with-phpxref-or-phpdoctor.html";
+    var wumiiTitle = "使用PHPXref或PHPDoctor自动生成注释和文档";
     var wumiiTags = "php,教程";
-    var wumiiCategories = ["知识总结"];
+    var wumiiCategories = ["建站知识","知识总结"];
     var wumiiSitePrefix = "http://blog.higrid.net";
     var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
     _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});

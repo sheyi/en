@@ -6,15 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>git常用操作命令 | H!Grid博客镜像站点</title>
+<title>搜狗输入法使用实用技巧分享 | H!Grid博客镜像站点</title>
 <meta name="author" content="higrid">
 
-<meta name="description" content="一开始GIT给人感觉很简单，但一用起来又觉得每个地方都捉襟见肘。其实git的学习曲线要比想象中的更为陡峭，有近20个常用命令，每个命令又有20个左右常用的参数，相互组合使用。要学好的话学习量绝对不低于新学一门语言和其常用类库，因其大多数操作都有相近的实现方式，但结果又各不相同，本篇是higrid收集的一些相关网络教程，以由易向难的顺序介绍。">
+<meta name="description" content="工作越繁忙，上班族们就越想找到捷径，让自己赶快做完手头的事情，逃离电脑的束缚。对于上网一族人人都离不开的工具“**输入法**，适当巧用可以起到事半功倍的效果。higrid现在主要使用**搜狗拼音输入法**，可以通过互联网备份自己的个性化词库和配置信息。如果你在使用过程中仔细留意下面的一些方法，那么你使用起来就更加顺手了。">
 
-<meta name="keywords" content="git, git资源, git工具">
+<meta name="keywords" content="搜狗输入法技巧, 搜狗输入法辅助码">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<meta property="og:title" content="git常用操作命令"/>
+<meta property="og:title" content="搜狗输入法使用实用技巧分享"/>
 <meta property="og:site_name" content="H!Grid博客镜像站点"/>
 
 <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
@@ -100,77 +100,49 @@
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title">git常用操作命令</h1>
+      <h1 class="title">搜狗输入法使用实用技巧分享</h1>
       
-        <span>发表于<time datetime="2014-07-03T11:41:11.000Z"> <a href="/posts/git-concise-guide-tutorial.html">2014-07-03</a></time></span>      
+        <span>发表于<time datetime="2014-08-02T05:24:31.000Z"> <a href="/posts/sougou-input-skills.html">2014-08-02</a></time></span>      
     </header>
     
     <section id='before_content_widget'></section>
     <div class="entry">
       
-        <p>一开始GIT给人感觉很简单，但一用起来又觉得每个地方都捉襟见肘。其实git的学习曲线要比想象中的更为陡峭，有近20个常用命令，每个命令又有20个左右常用的参数，相互组合使用。要学好的话学习量绝对不低于新学一门语言和其常用类库，因其大多数操作都有相近的实现方式，但结果又各不相同，本篇是higrid收集的一些相关网络教程，以由易向难的顺序介绍。 </p>
-<a id="more"></a>
-
-<h2 id="Git工作原理:">Git工作原理:</h2>
-<ol>
-<li>分布式,每个克隆或更新远程仓库的用户都拥有一份最新的完整的仓库。</li>
-<li>分支结构,不要直接操作<code>remote</code>的远程分支,应该首先<code>checkout</code>一份到本地分支。远程分支是指与远程仓库上同步的分支。而你所有的操作应该是在你的本地分支上操作。</li>
-<li>时刻记得你在那个分支下工作,因为你切换到任何分支都不会改变本地目录</li>
-<li><code>origin</code>代表远程仓库,为默认的远程仓库别名</li>
-<li><strong>git</strong>的分支仅仅是一个提交的标记,而不是目录,与svn的目录式分支结构不同</li>
-<li>仓库的意义是整个代码仓库,本地分支/远程分支,都是你本地仓库中的分支</li>
-</ol>
-<h2 id="Git常用操作命令及解释">Git常用操作命令及解释</h2>
-<p>注:以下所有以<code>$</code>开头的,为命令行操作,<code>$</code>之后的是命令, <code>#</code>号之后是注释</p>
-<p>1.克隆一个仓库</p>
-<pre><code>$ git clone git@github.com:sheyi/higrid.git#相当于svn checkout
-</code></pre><p>然后进入仓库目录,运行如下命令来忽略git对于文件权限的检查</p>
-<pre><code>$ git config core.filemode false
-</code></pre><p>然后设置你的帐户和邮箱</p>
-<pre><code>$ git config user.name = &quot;higrid&quot;
-$ git config user.email = &quot;info@higrid.net&quot;
-</code></pre><p>2.抽取一个分支以及切换到一个分支(切记,要得到一个分支,应该先抽取它,把它抽取到<br>本地,生成一个本地分支) 命令格式 <code>git checkout 本地分支名 origin/远程分支名</code>,通常,本地分支名和远程分支名一样,当然,也可以不一样。</p>
-<pre><code>$ git checkout release/0.2 origin/release/0.2
-$ git checkout master origin/master
-$ git checkout master #切换分支也是使用checkout,只不过不再输入远程分支信息
-</code></pre><p>3.查看分支,注意,*号在那个分支名前面,就说明你目前处在那个分支下。<br> 查看本地分支:</p>
-<pre><code>$ git branch
-</code></pre><p>查看所有分支,包括你仓库中的远程分支:</p>
-<pre><code>$ git branch -a
-</code></pre><p>更新你本地仓库的所有分支和远程仓库的分支保持一致,主要是删掉本地仓库中与远程仓库相比较,已经不存在的分支:</p>
-<pre><code>$ git remote prune origin
-</code></pre><p>4.本地仓库分支的创建和删除</p>
-<pre><code>$ git branch 分支名 #创建一个本地分支
-$ git branch -d 分支名 #删除一个本地分支,参数 -D 强制删除,删除前要先切换到其它分支
-</code></pre><p>5.更新仓库但不将修改合并分支的修改</p>
-<pre><code>$ git fetch
-</code></pre><p>6.更新仓库且将修改合并到本地分支,这个最常用,相当于svn up</p>
-<pre><code>$ git pull
-</code></pre><p>7.查看状态,是否有提交,删除,更新等信息,如果看到大批文件权限有更新,请使用“git config core.filemode false” 来忽略权限检查</p>
-<pre><code>$ git status
-</code></pre><p>8.提交,注意:提交仅仅是将你的修改提交到你本地的仓库,而非远程</p>
-<pre><code>$ git commit -m ”提交注释&quot;
-</code></pre><p>如果之前未使用 git add 将修改的文件加入暂存区,可再加一个参数 -a 来将所有未暂存的修改提交</p>
-<p>9.推送到远程仓库,只有将你的修改或分支推送到远程仓库,其它人才能从该远程仓库获取</p>
-<pre><code>$ git push origin #推送当前分支到远程仓库,前提是远程仓库有这个分支
-$ git remote add origin git@server-name:path/repo-name.git 要关联一个远程库
-$ git push -u origin master #第一次推送master分支的所有内容， 此后就可以使用命令git push origin master推送最新修改；
-</code></pre><p>10.删除远程仓库中的分支</p>
-<pre><code>$ git push origin :远程分支名
-$ git push origin --delete &lt;branchName&gt;
-$ git push origin --delete tag &lt;tagname&gt;
-</code></pre><h2 id="Git工作流程">Git工作流程</h2>
-<ol>
-<li>生成你的公钥和私钥,将公钥发给git仓库管理员</li>
-<li>克隆一个仓库</li>
-<li>检出一个远程分支到本地分支</li>
-<li>在本地分支上进行开发工作并提交</li>
-<li>将你的提交推送到远程仓库</li>
-<li>要经常更新你的本地分支 <code>git pull</code></li>
-<li>对于开发人员，不要在develop分支上直接开发，创建feature分支并publish协同开发。</li>
-<li>对于开发人员，要经常合并常规开发分支develop到你的feature分支上，以降低冲突的积累。</li>
-<li>第7、8条参照git-flow分支模型来规划。</li>
-</ol>
+        <p>工作越繁忙，上班族们就越想找到捷径，让自己赶快做完手头的事情，逃离电脑的束缚。对于上网一族人人都离不开的工具“<strong>输入法</strong>，适当巧用可以起到事半功倍的效果。higrid现在主要使用<strong>搜狗拼音输入法</strong>，可以通过互联网备份自己的个性化词库和配置信息。如果你在使用过程中仔细留意下面的一些方法，那么你使用起来就更加顺手了。</p>
+<h2 id="Tab拆字辅助码笔画">Tab拆字辅助码笔画</h2>
+<p><strong>搜狗输入法中的辅助码</strong> 虽然被很多人骂很烂，但平时同音字多的时候进行筛选用用也蛮好用的：<br>笔画筛选用于输入单字时，用笔顺来快速定位该字。使用方法是输入一个字或多个字后，按下tab键（tab键如果是翻页的话也不受影响），然后用h横、s 竖、p撇、n捺、z折依次输入第一个字的笔顺，一直找到该字为止。五个笔顺的规则同上面的笔画输入的规则。要退出笔画筛选模式，只需删掉已经输入的笔画辅助码即可。</p>
+<p><a id="more"></a><br>例如，快速定位【珍】字，输入了zhen后，按下【tab】，然后输入珍的前两笔【hh】，就可定位该字。<br>或者输入一个不怎么用的词：威赫（wei he），这个词不在第一页，这种情况下不要翻页。输入weihe，然后按tab键，会进入一个笔画模式，你可以用横撇竖点（hpsd）定位到字。这里，“威”字笔顺是横、撇、横、撇点、撇、横、斜钩、撇、点，所以你输入weihe之后，按一下tab，然后输入hp，看看是不是把第一个字是威的提到前 面了？如果还不够精确，可以继续输入下面的笔画，一般输入3笔左右就够了，然后按0只显示单字，选中威之后再选下一个。</p>
+<h2 id="Tab拆字辅助码拼音">Tab拆字辅助码拼音</h2>
+<p>上面讲的辅助码这个方法在输入生僻词组的时候很有用，这样定位一次，下次输入的时候就可以直接打拼音在第一页选中了。另外，搜狗这个功能不单单局限于笔画，一些偏旁也是可以的， 比如用n代表女字旁，这个可以自己摸索。想输入一个汉字【娴】，但是非常靠后，找不到，那么输入【xian】，然后按下【tab】键，在输入【娴】的两部分【女】【闲】的首字母nx，就可以看到只剩下【娴】字了。输入的顺序为xian+tab+nx。<br> 独体字由于不能被拆成两部分，所以独体字是没有拆字辅助码的。</p>
+<h2 id="难字按u键进行偏旁和笔画输入">难字按u键进行偏旁和笔画输入</h2>
+<p>U模式是专门为输入不会读的字所设计的。在输入u键后，然后依次输入一个字的笔顺，笔顺为：h横、s竖、p撇、n捺、z折，就可以得到该字，同时小键盘上的1、2、3、4、5也代表h、s、p、n、z。这里的笔顺规则与普通手机上的五笔画输入是完全一样的。其中点也可以用d来输入。由于双拼占用了u键，智能ABC的笔画规则不是五笔画，所以双拼和智能ABC下都没有u键模式。</p>
+<ul>
+<li>对于只认识偏旁部首，不清楚字音的字，像“黏”、“亓”等，我们可以这样输入：u+偏旁部首的读音，或者u+字的顺序笔画。</li>
+<li>对于即清楚字形，又清楚字音的，只是候选位置比较靠后的字，比如“幂”、“祎”等，我们可以这样输入：　读音+tab键+偏旁的读音首字母，例如“幂”字的偏旁是“秃宝盖”，对应的字母就是“t”，“祎”字的偏旁部首对应的读音分别是“s”（示补旁）、“w”（韦）。</li>
+<li>对于只知道读音，不清楚怎么写的字，我们可以这样输入：<ul>
+<li>比如“耄”，我们知道它是“耄耋”中的一个字，可以输入maodie，然后按“[”键，上屏当前候选第一个字；</li>
+<li>比如“餮”，我们知道它是“饕餮”中的一个字，可以输入taotie，然后按“]”键，上屏当前候选第二个字；</li>
+</ul>
+</li>
+</ul>
+<h2 id="搜狗拼音输入法特殊的使用方法">搜狗拼音输入法特殊的使用方法</h2>
+<ul>
+<li>键入<code>haha</code>选择2，得到^<em>^，选择3，得到o(∩</em>∩)o…哈哈</li>
+<li>键入<code>sj</code>选择1、2得到当前时间</li>
+<li>键入<code>xq</code>选择1得到当前日期和星期，选择2得到当前星期</li>
+<li>键入<code>rq</code>选择1得到××××年××月××日格式时间，选择2得到××××-××-××格式时间，选择3得到例如二〇〇八年三月三十一日的时间</li>
+<li>键入<code>xixi</code>选择2得到(<em>^__^</em>) 嘻嘻……</li>
+<li>键入<code>hehe</code>选择2得到:-)，键入3得到o(∩_∩)o…</li>
+<li>键入<code>llysc</code>选择2得到离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。远芳侵古道，晴翠接荒城。又送王孙去，萋萋满别情。</li>
+<li>键入<code>pai</code>选择3得到π</li>
+<li>键入<code>aerfa</code>选择2得到希腊字母α，依此类推</li>
+<li>键入<code>wjx</code>选择3、4分别得到☆和★</li>
+<li>键入<code>sjt、xjt、zjt、yjt</code>分别得到↑、↓、←和→</li>
+<li>键入<code>sjx</code>选择3、4分别得到△和▲</li>
+<li>输入<code>v123+456</code>，就能得到579</li>
+<li>自动转换大写数字，输入 <code>v15687215</code>，就可以输出壹仟伍佰陆拾捌万柒仟贰佰壹拾伍</li>
+<li>自定义短语速度快: 有时在输入中，有很多单位的名称等会反复出现多次，如果能用几个简单的字母轻松输入这些单位名称，一定可以提高输入速度。有的输入法中有自定义短语功能就可以实现。自定义短语在设置选项的“高级”选项卡中，默认开启。点击“自定义短语设置”就行了。点击其中的“添加新定义”按钮，弹出添加自定义短语窗口。在“缩写”下面的文本框中输入缩写，然后选择该条短语在候选项中的位置；最后在短语部分输入我们想要的文本。自定义短语最多可以支持300个汉字。比如输入“ａ”，自定义为“北京娱乐信报”，那么，下次你再敲下“ａ”时，就会出现“北京娱乐信报”的字样了，不必一一打出这6个字。</li>
+</ul>
 
       
     </div>
@@ -180,15 +152,15 @@ $ git push origin --delete tag &lt;tagname&gt;
 <div class="panel panel-success">
     <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
     <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
-    <div class="panel-body">本文链接: <a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></div>
+    <div class="panel-body">本文链接: <a href="/posts/sougou-input-skills.html">搜狗输入法使用实用技巧分享</a></div>
 </div></div><div class="widget" id="widget_after_content_ujian>">
 <div class="ujian-hook"></div>
 </div></section>
     
     
         <footer id="post-meta">
-        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a><a href="/tags/github/" class="label label-success" itemprop="url"><span itemprop="title">github</span></a></span> | <span class="time">最近更新:<time title="2014-07-05 18:56:37"datetime="2014-07-05 18:56:37"> 2014-07-05</time></span> | <span class="comment-link">
-<a href="http://blog.higrid.net/posts/git-concise-guide-tutorial.html#comments" id="uyan_count_unit" su="git-concise-guide-tutorial">暂无评论</a>
+        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/软件/" class="label label-primary" itemprop="url"><span itemprop="title">软件</span></a><a href="/tags/教程/" class="label label-success" itemprop="url"><span itemprop="title">教程</span></a></span> | <span class="time">最近更新:<time title="2014-08-02 10:24:41"datetime="2014-08-02 10:24:41"> 2014-08-02</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/sougou-input-skills.html#comments" id="uyan_count_unit" su="sougou-input-skills">暂无评论</a>
 </span>
         </footer>
     
@@ -201,13 +173,11 @@ $ git push origin --delete tag &lt;tagname&gt;
     <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
 <ul class="pager">
   
-  <li class="previous"><a href="/posts/install-composer-on-windows.html" title="在Windows系统中安裝使用composer">&larr; 在Windows系统中安裝使用composer</a></li>
   
-  
-  <li class="next"><a href="/posts/git-commit-skills.html" title="Git commit 之注释的技巧">Git commit 之注释的技巧 &rarr;</a></li>
+  <li class="next"><a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html" title="使用PHPXref或PHPDoctor自动生成注释和文档">使用PHPXref或PHPDoctor自动生成注释和文档 &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html">使用PHPXref或PHPDoctor自动生成注释和文档</a></li><li class="list-group-item"><a href="/posts/use-keyboard-in-excel.html">Excel中常用的快捷键总结</a></li><li class="list-group-item"><a href="/posts/the-advantage-of-vim.html">vim的优秀之处在哪里</a></li><li class="list-group-item"><a href="/posts/linux-basic-command.html">linux基础教程及常用配置</a></li><li class="list-group-item"><a href="/posts/markdown-tools-and-resources.html">markdown格式在日常中的使用及转化</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/posts/markdown-tools-and-resources.html">markdown格式在日常中的使用及转化</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/git-commit-skills.html">Git commit 之注释的技巧</a></li><li class="list-group-item"><a href="/posts/the-advantage-of-vim.html">vim的优秀之处在哪里</a></li><li class="list-group-item"><a href="/posts/sougou-input-skills.html">搜狗输入法使用实用技巧分享</a></li></ul></div></section>    
 	<div id="comments">
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
@@ -261,7 +231,7 @@ $ git push origin --delete tag &lt;tagname&gt;
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-05 18:56:37</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-08-02 10:24:41</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -272,8 +242,8 @@ $ git push origin --delete tag &lt;tagname&gt;
         <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
             <script type="text/javascript">
 var uyan_config={
-     'url':'http://blog.higrid.net/posts/git-concise-guide-tutorial.html',
-'su':'git-concise-guide-tutorial'
+     'url':'http://blog.higrid.net/posts/sougou-input-skills.html',
+'su':'sougou-input-skills'
 };
 _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
 </script>
@@ -282,9 +252,9 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
             <!--wumii_relatedItems-->
 
 <script type="text/javascript">
-    var wumiiPermaLink = "http://blog.higrid.net/posts/git-concise-guide-tutorial.html";
-    var wumiiTitle = "git常用操作命令";
-    var wumiiTags = "git,github";
+    var wumiiPermaLink = "http://blog.higrid.net/posts/sougou-input-skills.html";
+    var wumiiTitle = "搜狗输入法使用实用技巧分享";
+    var wumiiTags = "软件,教程";
     var wumiiCategories = ["知识总结"];
     var wumiiSitePrefix = "http://blog.higrid.net";
     var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";

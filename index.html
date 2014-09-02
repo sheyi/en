@@ -100,6 +100,65 @@
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/posts/understanding-the-github-workflow.html">深入理解GitHub工作流</a></h1>
+      
+        <span>发表于<time datetime="2014-09-02T10:38:08.000Z"> <a href="/posts/understanding-the-github-workflow.html">2014-09-02</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>关于 Github 工作流，很多人知道 Git Flow。类似 Git 这样的分布式版本控制，不再强调代码在提交时的整合，而是强调中心库向私有库的分裂和各个私有库各自的合并。分支越细致，合并代码的成本就越低。以 Feature、Bugfix 为单位整理分支，合并的时候就会非常清晰。如果代码耦合度低的话，几乎所有合并都可以自动完成。</p>
+<p><code>github</code>上用先 <code>fork</code>后发 pull request 的方式，参与别人项目。</p>
+<ol>
+<li>要注意的地方</li>
+</ol>
+<ul>
+<li>不要直接在 <code>master</code>上写代码</li>
+<li>因为我们本地的 master 主要是用来跟踪上游 master 的</li>
+</ul>
+<ol>
+<li>很有用的 <code>branch</code>操作</li>
+</ol>
+<ul>
+<li>本地新建分支 git check -b add_sth </li>
+<li>把本地的 add_sth 分支保存的 github 上 git push orign add_sth   </li>
+<li>删除本地 add_sth 分支 git branch -D add_sth    </li>
+<li>删除 github 上的 add_sth 分支 git push orign :add_sth</li>
+</ul>
+<p>下文为 <strong>github工作流程</strong> 的译文，原文见尾部链接</p>
+
+      
+    </div>
+    
+    
+      
+      <div id='more-link'>
+        <div align="left">
+          <a href="/posts/understanding-the-github-workflow.html#more" class="more-link fa fa-play">阅读全文</a>
+        </div>
+      </div>
+      
+    
+    
+        <footer id="post-meta">
+        <div class="categories"style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/建站知识/" itemprop="url"><span itemprop="title" >建站知识</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a><a href="/tags/github/" class="label label-success" itemprop="url"><span itemprop="title">github</span></a><a href="/tags/教程/" class="label label-info" itemprop="url"><span itemprop="title">教程</span></a></span> | <span class="time">最近更新:<time title="2014-09-02 15:38:42"datetime="2014-09-02 15:38:42"> 2014-09-02</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/understanding-the-github-workflow.html#comments" id="uyan_count_unit" su="understanding-the-github-workflow">暂无评论</a>
+</span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/posts/markdown-simple-example.html">Markdown中文快速入门</a></h1>
       
         <span>发表于<time datetime="2014-08-29T14:58:51.000Z"> <a href="/posts/markdown-simple-example.html">2014-08-29</a></time></span>      
@@ -484,47 +543,6 @@
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></h1>
-      
-        <span>发表于<time datetime="2014-07-03T11:41:11.000Z"> <a href="/posts/git-concise-guide-tutorial.html">2014-07-03</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>一开始GIT给人感觉很简单，但一用起来又觉得每个地方都捉襟见肘。其实git的学习曲线要比想象中的更为陡峭，有近20个常用命令，每个命令又有20个左右常用的参数，相互组合使用。要学好的话学习量绝对不低于新学一门语言和其常用类库，因其大多数操作都有相近的实现方式，但结果又各不相同，本篇是higrid收集的一些相关网络教程，以由易向难的顺序介绍。 </p>
-
-      
-    </div>
-    
-    
-      
-      <div id='more-link'>
-        <div align="left">
-          <a href="/posts/git-concise-guide-tutorial.html#more" class="more-link fa fa-play">阅读全文</a>
-        </div>
-      </div>
-      
-    
-    
-        <footer id="post-meta">
-        <div class="categories"style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a><a href="/tags/github/" class="label label-success" itemprop="url"><span itemprop="title">github</span></a></span> | <span class="time">最近更新:<time title="2014-07-05 18:56:37"datetime="2014-07-05 18:56:37"> 2014-07-05</time></span> | <span class="comment-link">
-<a href="http://blog.higrid.net/posts/git-concise-guide-tutorial.html#comments" id="uyan_count_unit" su="git-concise-guide-tutorial">暂无评论</a>
-</span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -578,7 +596,7 @@
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-08-29 20:15:57</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-02 15:40:12</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -590,7 +608,7 @@
             <script type="text/javascript">
 var uyan_config={
      'url':'http://blog.higrid.net/',
-'su':'git-concise-guide-tutorial'
+'su':'install-composer-on-windows'
 };
 _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
 </script>

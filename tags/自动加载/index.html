@@ -6,15 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>在Windows系统中安裝使用composer | H!Grid博客镜像站点</title>
+<title>自动加载 | H!Grid博客镜像站点</title>
 <meta name="author" content="higrid">
 
-<meta name="description" content="Composer 是PHP中用来管理依赖(dependency)关系的工具。你可以在自己的项目中声明所依赖的外部工具库(libraries)，Composer会帮你安装这些依赖的库文件。Composer 是兼容多平台的，其运行适用于Windows，Linux和OSX。">
+<meta name="description" content="嗨网英文HiGrid,结合PHP表格和jquery表格优点创建互动的在线表格,传播jqgrid中文,highCharts使用,php编程知识,也包括编辑器vim,emacs的使用及tex,orgmode技巧，同时介绍其他php表格和jquery表格和图形及php内容管理系统">
 
-<meta name="keywords" content="git, git注释, git commit">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<meta property="og:title" content="在Windows系统中安裝使用composer"/>
+
 <meta property="og:site_name" content="H!Grid博客镜像站点"/>
 
 <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
@@ -95,72 +95,12 @@
      <div class="row">
        <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
       <section id='header_widget'></section>
-          <div id="wrapper"><article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title">在Windows系统中安裝使用composer</h1>
-      
-        <span>发表于<time datetime="2014-07-05T06:10:43.000Z"> <a href="/posts/install-composer-on-windows.html">2014-07-05</a></time></span>      
-    </header>
-    
-    <section id='before_content_widget'></section>
-    <div class="entry">
-      
-        <p>Composer 是PHP中用来管理依赖(dependency)关系的工具。你可以在自己的项目中声明所依赖的外部工具库(libraries)，Composer会帮你安装这些依赖的库文件。Composer 是兼容多平台的，其运行适用于Windows，Linux和OSX。<br>大多数<strong>PHP</strong>开发人员会选择他们自己喜欢的框架来处理他们的代码，比如DB交互、ORIMS、Oauth、Amazon S3整合等。 不好的地方就是转换框架（或者根本不需要返回使用框架）就感觉像在做噩梦，因为涉及到使用新工具，你必须重新学习里面的一切东西，而这并不简单。OK， Composer 来解决这些问题。</p>
-<a id="more"></a> 
-
-<h2 id="系统要求">系统要求</h2>
-<p><strong>Composer</strong> 需要PHP 5.3.2+才能运行。一些灵敏的PHP设置和编译选项也是必须的，不过安装程序（installer）会警告你任何不兼容的地方。<br>也可以先设置环境变量。因为windows下执行命令的方式，不如linux下那么方便，设置环境命令后让php能通过dos去运行。<br>开启ssl扩展: php的安装目录比如说 <code>C:\wamp\bin\php\php\</code> 中，找到找个目录下的<strong>php.ini</strong>文件，然后去掉 <code>extension=php_openssl.dll</code>  这一行开头的注释</p>
-<h2 id="在windows中使用安装程序安装composer">在windows中使用安装程序安装composer</h2>
-<p>下载并运行<strong>Composer-Setup.exe</strong>，<a href="https://github.com/composer/windows-setup" target="_blank" rel="external">https://github.com/composer/windows-setup</a> 它将会安装最新的Composer版本并且设置好PATH，然后你就可以在命令中的任何目录下调用composer了。<br>中间的安装过程没什么好说，直接下一步就是了，期间会要你选择php.exe所在的路径。<br>安装完后默认在 <code>C:\ProgramData\ComposerSetup\bin</code> 下，并且自动加入环境变量，所以只要在CMD中输入 <code>composer --help</code> 即可查看帮助文档。</p>
-<p>注意：这里的composer命令（即运行 <code>C:\ProgramData\ComposerSetup\bin\composer.bat</code>）等于好多网上用的php composer.phar命令，因为composer.bat中默认已经把<code>php composer.phar</code>命令写进去了。</p>
-<h2 id="使用composer">使用composer</h2>
-<p>接下来要使用Composer来安装项目的依赖。如果你在当前目录下有一个叫作composer.json的文件</p>
-<pre><code>$ composer install
-</code></pre><p>这个操作将会下载包到vendor/目录。</p>
-
-      
-    </div>
-    <section id='after_content_widget'><div class="widget" id="widget_after_content_wumiiRelatedItems>">
-<script type="text/javascript" id="wumiiRelatedItems"></script>
-</div><div class="widget" id="widget_after_content_post_footer_info>">
-<div class="panel panel-success">
-    <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
-    <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
-    <div class="panel-body">本文链接: <a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></div>
-</div></div><div class="widget" id="widget_after_content_ujian>">
-<div class="ujian-hook"></div>
-</div></section>
-    
-    
-        <footer id="post-meta">
-        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/php/" class="label label-primary" itemprop="url"><span itemprop="title">php</span></a><a href="/tags/软件/" class="label label-success" itemprop="url"><span itemprop="title">软件</span></a></span> | <span class="time">最近更新:<time title="2014-07-10 19:48:45"datetime="2014-07-10 19:48:45"> 2014-07-10</time></span> | <span class="comment-link">
-<a href="http://blog.higrid.net/posts/install-composer-on-windows.html#comments" id="uyan_count_unit" su="install-composer-on-windows">暂无评论</a>
-</span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
+          <div id="wrapper"><h2 class="archive-title tag">自动加载</h2>
 
 
-    <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
-<ul class="pager">
-  
-  <li class="previous"><a href="/posts/linux-basic-command.html" title="linux基础教程及常用配置">&larr; linux基础教程及常用配置</a></li>
-  
-  
-  <li class="next"><a href="/posts/git-concise-guide-tutorial.html" title="git常用操作命令">git常用操作命令 &rarr;</a></li>
-  
-</ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/posts/linux-search-files.html">Linux的查找命令find和locate命令</a></li><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/php-namespace-and-autoload.html">PHP命名空间及自动加载</a></li><li class="list-group-item"><a href="/posts/sougou-input-skills.html">搜狗输入法使用实用技巧分享</a></li><li class="list-group-item"><a href="/posts/git-concise-guide-tutorial.html">git常用操作命令</a></li><li class="list-group-item"><a href="/posts/git-commit-skills.html">Git commit 之注释的技巧</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/the-advantage-of-vim.html">vim的优秀之处在哪里</a></li></ul></div></section>    
-	<div id="comments">
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<!-- UY END -->
+<div class="archive">
+
+  <ul class="list-group"><li class="list-group-item"><h3><time datetime="2014-09-04T14:43:26.000Z">2014-09-04</time>  <a href="/posts/php-namespace-and-autoload.html">PHP命名空间及自动加载</a></h3><p class="list-group-item-text">现在php的namespace使用也很多，github上面许多开源的软件也都已经使用namespace，一些NB的开源框架使用namespace，如Symfony，larvael等，使用namespace对autoloader及class命名冲突都能够方便的管理</p>
 
 </div></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -210,7 +150,7 @@
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-10 19:48:45</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-04 19:44:23</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -221,27 +161,14 @@
         <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
             <script type="text/javascript">
 var uyan_config={
-     'url':'http://blog.higrid.net/posts/install-composer-on-windows.html',
-'su':'install-composer-on-windows'
+     'url':'http://blog.higrid.net/tags/自动加载/',
+
 };
 _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
 </script>
 
     
             <!--wumii_relatedItems-->
-
-<script type="text/javascript">
-    var wumiiPermaLink = "http://blog.higrid.net/posts/install-composer-on-windows.html";
-    var wumiiTitle = "在Windows系统中安裝使用composer";
-    var wumiiTags = "php,软件";
-    var wumiiCategories = ["知识总结"];
-    var wumiiSitePrefix = "http://blog.higrid.net";
-    var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
-    _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});
-</script>
-<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
-<img src="http://static.wumii.cn/images/pixel.png" alt="无觅关联推荐，快速提升流量" style="border:0;padding:0;margin:0;" />
-</a>
     
             
 <script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1600048'});</script>

@@ -6,15 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Git commit 之注释的技巧 | H!Grid博客镜像站点</title>
+<title>PHP命名空间及自动加载 | H!Grid博客镜像站点</title>
 <meta name="author" content="higrid">
 
-<meta name="description" content="Git 本身并没有硬性限制注释的格式，不过，对于多人参与的项目来说， 好的注释风格更加有利于团队合作。 即使是自己用，也应当坚持实用好的注释风格， 一来是对自己的工作历史负责，二来得以养成好的注释习惯。 虽然这里标题说的是 Git，其他源代码控制系统也可以参考的。">
+<meta name="description" content="现在php的namespace使用也很多，github上面许多开源的软件也都已经使用namespace，一些NB的开源框架使用namespace，如Symfony，larvael等，使用namespace对autoloader及class命名冲突都能够方便的管理">
 
-<meta name="keywords" content="git, git注释, git commit">
+<meta name="keywords" content="PHP, 命名空间, 自动加载">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<meta property="og:title" content="Git commit 之注释的技巧"/>
+<meta property="og:title" content="PHP命名空间及自动加载"/>
 <meta property="og:site_name" content="H!Grid博客镜像站点"/>
 
 <!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
@@ -100,62 +100,91 @@
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title">Git commit 之注释的技巧</h1>
+      <h1 class="title">PHP命名空间及自动加载</h1>
       
-        <span>发表于<time datetime="2014-06-30T04:28:24.000Z"> <a href="/posts/git-commit-skills.html">2014-06-30</a></time></span>      
+        <span>发表于<time datetime="2014-09-04T14:43:26.000Z"> <a href="/posts/php-namespace-and-autoload.html">2014-09-04</a></time></span>      
     </header>
     
     <section id='before_content_widget'></section>
     <div class="entry">
       
-        <p>Git 本身并没有硬性限制注释的格式，不过，对于多人参与的项目来说， 好的注释风格更加有利于团队合作。 即使是自己用，也应当坚持实用好的注释风格， 一来是对自己的工作历史负责，二来得以养成好的注释习惯。 虽然这里标题说的是 Git，其他源代码控制系统也可以参考的。 </p>
-<a id="more"></a>
+        <p>现在php的namespace使用也很多，github上面许多开源的软件也都已经使用namespace，一些NB的开源框架使用namespace，如Symfony，larvael等，使用namespace对autoloader及class命名冲突都能够方便的管理</p>
+<p>假设如果不使用 <strong>php命名空间</strong> namespace，那么每个类在一个项目中的名字就必须是固定的。因为<code>php</code>在new的时候不管是调用<code>autoload</code>还是调用已加载过的类，都存在一个类名对应的文件。所以在没有php命名空间<code>namespace</code>的时候，我们会想各种命名规则来区分不同的类，比如<code>project1_school1_class1_Student</code>或者<code>project2_school_class_Student</code>。 引入<strong>php namespace</strong> 之后就可以将这个有效规避了，一个namespace就相当于对应一个文件路径，查找这个类的时候，就会去对应的文件路径查找类定义文件了。</p>
+<h2 id="php命名空间">php命名空间</h2>
+<p>什么是<a href="http://zh.wikipedia.org/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4" target="_blank" rel="external">php命名空间</a>呢？</p>
+<blockquote>
+<p>命名空间（英语：Namespace）表示标识符（identifier）的可见范围。一个标识符可在多个命名空间中定义，它在不同命名空间中的含义是互不相干的。这样，在一个新的命名空间中可定义任何标识符，它们不会与任何已有的标识符发生冲突，因为已有的定义都处于其它命名空间中。</p>
+</blockquote>
+<p>简单说来<strong>命名空间</strong> 是为了解决不同库在同一个环境下使用时出现的命名冲突。例如我自己有一个函数名叫A，但是系统已经有一个A函数了，那就会出现冲突。</p>
+<a id="more"></a> 
 
-<h2 id="Git_commit_提交注释信息的作用">Git commit 提交注释信息的作用</h2>
-<ul>
-<li>加快 Reviewing Code 的过程</li>
-<li>帮助我们写好 release note</li>
-<li>N年后帮你快速想起来某个分支，tag 或者 commit 增加了什么功能，改变了哪些代码</li>
-<li>让其他的开发者在运行 git blame 的时候想跪谢</li>
-<li>总之一个好的提交信息，会帮助你提高项目的整体质量</li>
-</ul>
-<h2 id="Git注释的基本要求">Git注释的基本要求</h2>
-<p>简而言之：第一行一句话改过你做的修改(少于50个字)、第二行空行、剩余行请描述为什么你做的这些改动是好的。</p>
-<h3 id="commit_第一行题目">commit 第一行题目</h3>
-<p>可以写成：<code>Fix issue #8976</code> (使用 fix, add, change )<br>或者：</p>
-<pre><code>    Mod: remove unused code, 表示修改（Modify）
-    Add: a new module to have faster process, 表示新增（Add）
-    Rem: deprecate unused modules, 表示移除（Remove）
-    Ref: improved the implementation of module X, 表示重构（Refactory）
-</code></pre><p>如果一个<strong>Git commit</strong> 里的内容无法用上述任意一种语句陈述，应该怎么办？那说明你的commit应该被拆分成多个小部分。 估计很多开始使用 git 的同学把握不住什么时候应该 commit， 什么时候又应该把未提交的 commits 都 push 上去，一般 ： 提交描述 = 提交的修改，这样提交的描述才精准。 git 的提交描述可以是多行的，描述的内容可以非常详细， 在不填写描述的情况下提交 git 弹出的这个对话框就介绍了这一点。</p>
-<p>因此请将每次提交限定于完成一次逻辑功能。并且可能的话，适当地分解为多次小更新，以便每次小型提交都更易于理解。commit 是一次目的性明确的改动， 但改动的地方不宜过多（否则看起来会晕）， 我们应该将一个功能分解为几个 commit， 一个 commit 负责一个部分的改动， 当这几个 commit 都完成了再 push。这样做是因为没有 push 上去的提交保存在本地， 万一有什么当时没想好的，还可以修改 （未 push 的 commit 是有办法修改的，后续文章会讲）， 要是 push 上去了，最好就不要改了， 而是用新的 commit 来弥补 （git 允许冲掉以前 push 的变更：git push -f）。照以上的建议来做的话，可以保证每个 commit 的质量，以致提高每个功能的质量。</p>
-<h3 id="commit_第三行及后续剩余行">commit 第三行及后续剩余行</h3>
-<p>永远别忘了第2行是空行。第三行开始主要回答如下信息:</p>
-<ol>
-<li>为什么这次修改是必要的？ 要告诉 Reviewers，你的提交包含什么改变。让他们更容易审核代码和忽略无关的改变。</li>
-<li>如何解决的问题？</li>
-<li>这些变化可能影响哪些地方？</li>
-</ol>
-<p>这是你最需要回答的问题。因为它会帮你发现在某个 branch 或 commit 中的做了过多的改动。一个提交尽量只做1，2个变化。 你的团队应该有一个自己的行为规则，规定每个 commit 和 branch 最多能含有多少个功能修改。用 Line break 来分割提交信息，让它在某些软件里面更容易读<br>不用 <code>git commit</code> 上增加 <code>-m &lt;msg&gt;</code> 或 <code>--message=&lt;msg&gt;</code> 参数，而单独写提交信息。 一个推荐的 commit message 应该是这样：</p>
-<pre><code>Redirect user to the requested page after login
+<h2 id="PHP中的命名空间">PHP中的命名空间</h2>
+<p>PHP从5.3版本开始引入了命名空间，之后许多现有PHP类库以及框架都开始支持它。那么<strong>PHP的命名空间怎么用</strong>呢？</p>
+<h3 id="定义命名空间">定义命名空间</h3>
+<p>下面是一个定义命名空间的例子</p>
+<pre><code>&lt;?php    
+//file a.php
+namespace A;
 
-https://www.higrid.net/
+const test = &#39;Atest&#39;; 
 
-Users were being redirected to the home page after login, which is less
-useful than redirecting to the page they had originally requested before
-being redirected to the login form.
+function test() { 
+    return __FUNCTION__; 
+}
 
-* Store requested path in a session variable
-* Redirect to the stored location after successfully logging in the user
-</code></pre><p>注释最好包含一个连接指向你们项目的 issue/story/card。一个完整的连接比一个 issue numbers 更好<br>提交信息中包含一个简短的故事，能让别人更容易理解你的项目</p>
-<h2 id="修改已经git_commit的注释信息">修改已经git commit的注释信息</h2>
-<p>首先，使用下面这个命令来设置git默认的编辑器，其中的“editor”替换成你自己的编辑器，如Vim、Emacs、gedit、subl等：</p>
-<pre><code>git config --global core.editor &quot;editor -w&quot;
-</code></pre><p>然后，在做提交的时候使用命令不要写”-m”参数，直接写成git commit这样子就行，这样就会自动打开你刚才指定的编辑器，你可以在里面添加大段注释。 设置使用vim编辑，git config —global core.editor vim</p>
-<ul>
-<li>执行’git commit --amend’ 修改最后一次提交的信息</li>
-<li>执行’git push origin +master:master’ 强制更新远程服务器上的commit 尽量慎用此方法</li>
-</ul>
+class Test{
+    public function __construct(){
+        return __METHOD__;
+    }
+}
+?&gt;
+</code></pre><p>上面例子中就是一个典型的命名空间定义方法，只有<code>const</code>, <code>function</code>, <code>class</code>受命名空间的约束。</p>
+<h3 id="使用php命名空间">使用php命名空间</h3>
+<p>使用<strong>php命名空间</strong> 的方式如下：</p>
+<pre><code>&lt;?php 
+namespace B;
+use A;
+
+const test = &#39;Btest&#39;;
+function test() { 
+    return __FUNCTION__; 
+}
+
+class Test{
+    public function __construct(){
+        return __METHOD__;
+    }
+}
+
+include &quot;a.php&quot;;//必须包含A命名空间的文件
+
+// 完全限定
+// `\B\test`从绝对位置查找输出，如果是全局函数则`\test`
+echo \B\test;   //输出Btest
+
+// 限定名称  
+// 这里已经通过`use A`申明了在这个文件可以通过`\A\...`使用A命名空间的函数
+echo A\test;    //输出Atest
+
+// 非限定名称
+// 非限定名称的函数`test`会从当前命名控件查找，即B
+echo test;      //输出Btest
+
+// namespace关键字代表当前命名空间
+echo namespace/test;
+?&gt;
+</code></pre><p>首先要注意的是命名空间只起申明作用，也就是在使用了命名空间的时候依然得把这个命名空间申明的那个文件包含进来。在使用中可以通过<code>__NAMESPACE__</code>来查看当前命名空间。</p>
+<p>更多内容可以查看<a href="http://www.php.net/manual/zh/language.namespaces.basics.php" target="_blank" rel="external">PHP官方文档</a></p>
+<h2 id="自动加载">自动加载</h2>
+<p>每个文件既要申明命名控件又要手动<code>include</code>是非常不智能的事情，所以在自己的PHP系统或者框架中可以使用自动加载技术，让系统自己去找</p>
+<p>最简单的方式是利用函数<code>__autoload</code>函数，但是这个函数只能在非命名控件下定义，也就是全局情况下：</p>
+<pre><code>function __autoload($class) {
+  $dir = &#39;./&#39;;
+  set_include_path(get_include_path().PATH_SEPARATOR.$ids_dir);
+  $class = str_replace(&#39;\\&#39;, &#39;/&#39;, $class) . &#39;.php&#39;; 
+  require_once($class);
+</code></pre><p>}</p>
+<p>如果在已经有了命名空间的类中，可以使用函数<code>spl_autoload_register</code>来注册一个类中的方法来代替<code>__autoload</code></p>
 
       
     </div>
@@ -165,15 +194,15 @@ being redirected to the login form.
 <div class="panel panel-success">
     <div class="panel-heading" align="center">希望本站内容对您有点用处,有什么疑问或建议请在后面留言评论</div>
     <div align="center" class="panel-body">若无特别注明，本站内容均属原创,转载请注明作者(<a href="http://higrid.net">higrid</a>)和出处 <a href="http://blog.higrid.net">H!Grid博客镜像站点</a> ，请勿用于任何商业用途</div>
-    <div class="panel-body">本文链接: <a href="/posts/git-commit-skills.html">Git commit 之注释的技巧</a></div>
+    <div class="panel-body">本文链接: <a href="/posts/php-namespace-and-autoload.html">PHP命名空间及自动加载</a></div>
 </div></div><div class="widget" id="widget_after_content_ujian>">
 <div class="ujian-hook"></div>
 </div></section>
     
     
         <footer id="post-meta">
-        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a></span> | <span class="time">最近更新:<time title="2014-07-05 18:56:37"datetime="2014-07-05 18:56:37"> 2014-07-05</time></span> | <span class="comment-link">
-<a href="http://blog.higrid.net/posts/git-commit-skills.html#comments" id="uyan_count_unit" su="git-commit-skills">暂无评论</a>
+        <div class="categories" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/建站知识/" itemprop="url"><span itemprop="title" >建站知识</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/php/" class="label label-primary" itemprop="url"><span itemprop="title">php</span></a><a href="/tags/命名空间/" class="label label-success" itemprop="url"><span itemprop="title">命名空间</span></a><a href="/tags/自动加载/" class="label label-info" itemprop="url"><span itemprop="title">自动加载</span></a></span> | <span class="time">最近更新:<time title="2014-09-04 19:43:57"datetime="2014-09-04 19:43:57"> 2014-09-04</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/php-namespace-and-autoload.html#comments" id="uyan_count_unit" su="php-namespace-and-autoload">暂无评论</a>
 </span>
         </footer>
     
@@ -186,13 +215,11 @@ being redirected to the login form.
     <section id='after_post_widget'><div class="widget" id="widget_after_post_post_pageNav>">
 <ul class="pager">
   
-  <li class="previous"><a href="/posts/git-concise-guide-tutorial.html" title="git常用操作命令">&larr; git常用操作命令</a></li>
   
-  
-  <li class="next"><a href="/posts/markdown-tools-and-resources.html" title="markdown格式在日常中的使用及转化">markdown格式在日常中的使用及转化 &rarr;</a></li>
+  <li class="next"><a href="/posts/understanding-the-github-workflow.html" title="深入理解GitHub工作流">深入理解GitHub工作流 &rarr;</a></li>
   
 </ul></div><div class="widget" id="widget_after_post_related_posts>">
-<ul class="list-group"><li class="list-group-item"><a href="/posts/how-to-use-index-match-in-excel.html">excel中index match用法</a></li><li class="list-group-item"><a href="/posts/understanding-the-github-workflow.html">深入理解GitHub工作流</a></li><li class="list-group-item"><a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html">使用PHPXref或PHPDoctor自动生成注释和文档</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/php-func-constant-define.html">php常量的说明</a></li><li class="list-group-item"><a href="/posts/git-pull-push-from-multiple-remote-locations.html">git与多个远程仓库同步</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/git-commit-skills.html">Git commit 之注释的技巧</a></li></ul></div></section>    
+<ul class="list-group"><li class="list-group-item"><a href="/posts/markdown-simple-example.html">Markdown中文快速入门</a></li><li class="list-group-item"><a href="/posts/php-history-overview.html">简单明了php版本历史</a></li><li class="list-group-item"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></li><li class="list-group-item"><a href="/posts/php-func-constant-define.html">php常量的说明</a></li><li class="list-group-item"><a href="/posts/understanding-the-github-workflow.html">深入理解GitHub工作流</a></li><li class="list-group-item"><a href="/posts/php-namespace-and-autoload.html">PHP命名空间及自动加载</a></li><li class="list-group-item"><a href="/posts/create-documentation-with-phpxref-or-phpdoctor.html">使用PHPXref或PHPDoctor自动生成注释和文档</a></li></ul></div></section>    
 	<div id="comments">
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
@@ -246,7 +273,7 @@ being redirected to the login form.
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-07-05 18:56:37</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-04 19:43:57</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -257,8 +284,8 @@ being redirected to the login form.
         <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
             <script type="text/javascript">
 var uyan_config={
-     'url':'http://blog.higrid.net/posts/git-commit-skills.html',
-'su':'git-commit-skills'
+     'url':'http://blog.higrid.net/posts/php-namespace-and-autoload.html',
+'su':'php-namespace-and-autoload'
 };
 _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
 </script>
@@ -267,10 +294,10 @@ _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
             <!--wumii_relatedItems-->
 
 <script type="text/javascript">
-    var wumiiPermaLink = "http://blog.higrid.net/posts/git-commit-skills.html";
-    var wumiiTitle = "Git commit 之注释的技巧";
-    var wumiiTags = "git";
-    var wumiiCategories = ["知识总结"];
+    var wumiiPermaLink = "http://blog.higrid.net/posts/php-namespace-and-autoload.html";
+    var wumiiTitle = "PHP命名空间及自动加载";
+    var wumiiTags = "php,命名空间,自动加载";
+    var wumiiCategories = ["建站知识"];
     var wumiiSitePrefix = "http://blog.higrid.net";
     var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
     _js2load.push({src:'http://widget.wumii.cn/ext/relatedItemsWidget'});

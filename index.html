@@ -100,6 +100,54 @@
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/posts/php-namespace-and-autoload.html">PHP命名空间及自动加载</a></h1>
+      
+        <span>发表于<time datetime="2014-09-04T14:43:26.000Z"> <a href="/posts/php-namespace-and-autoload.html">2014-09-04</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>现在php的namespace使用也很多，github上面许多开源的软件也都已经使用namespace，一些NB的开源框架使用namespace，如Symfony，larvael等，使用namespace对autoloader及class命名冲突都能够方便的管理</p>
+<p>假设如果不使用 <strong>php命名空间</strong> namespace，那么每个类在一个项目中的名字就必须是固定的。因为<code>php</code>在new的时候不管是调用<code>autoload</code>还是调用已加载过的类，都存在一个类名对应的文件。所以在没有php命名空间<code>namespace</code>的时候，我们会想各种命名规则来区分不同的类，比如<code>project1_school1_class1_Student</code>或者<code>project2_school_class_Student</code>。 引入<strong>php namespace</strong> 之后就可以将这个有效规避了，一个namespace就相当于对应一个文件路径，查找这个类的时候，就会去对应的文件路径查找类定义文件了。</p>
+<h2 id="php命名空间">php命名空间</h2>
+<p>什么是<a href="http://zh.wikipedia.org/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4" target="_blank" rel="external">php命名空间</a>呢？</p>
+<blockquote>
+<p>命名空间（英语：Namespace）表示标识符（identifier）的可见范围。一个标识符可在多个命名空间中定义，它在不同命名空间中的含义是互不相干的。这样，在一个新的命名空间中可定义任何标识符，它们不会与任何已有的标识符发生冲突，因为已有的定义都处于其它命名空间中。</p>
+</blockquote>
+<p>简单说来<strong>命名空间</strong> 是为了解决不同库在同一个环境下使用时出现的命名冲突。例如我自己有一个函数名叫A，但是系统已经有一个A函数了，那就会出现冲突。</p>
+
+      
+    </div>
+    
+    
+      
+      <div id='more-link'>
+        <div align="left">
+          <a href="/posts/php-namespace-and-autoload.html#more" class="more-link fa fa-play">阅读全文</a>
+        </div>
+      </div>
+      
+    
+    
+        <footer id="post-meta">
+        <div class="categories"style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/建站知识/" itemprop="url"><span itemprop="title" >建站知识</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/php/" class="label label-primary" itemprop="url"><span itemprop="title">php</span></a><a href="/tags/命名空间/" class="label label-success" itemprop="url"><span itemprop="title">命名空间</span></a><a href="/tags/自动加载/" class="label label-info" itemprop="url"><span itemprop="title">自动加载</span></a></span> | <span class="time">最近更新:<time title="2014-09-04 19:43:57"datetime="2014-09-04 19:43:57"> 2014-09-04</time></span> | <span class="comment-link">
+<a href="http://blog.higrid.net/posts/php-namespace-and-autoload.html#comments" id="uyan_count_unit" su="php-namespace-and-autoload">暂无评论</a>
+</span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/posts/understanding-the-github-workflow.html">深入理解GitHub工作流</a></h1>
       
         <span>发表于<time datetime="2014-09-02T10:38:08.000Z"> <a href="/posts/understanding-the-github-workflow.html">2014-09-02</a></time></span>      
@@ -142,7 +190,7 @@
     
     
         <footer id="post-meta">
-        <div class="categories"style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/建站知识/" itemprop="url"><span itemprop="title" >建站知识</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a><a href="/tags/github/" class="label label-success" itemprop="url"><span itemprop="title">github</span></a><a href="/tags/教程/" class="label label-info" itemprop="url"><span itemprop="title">教程</span></a></span> | <span class="time">最近更新:<time title="2014-09-02 15:38:42"datetime="2014-09-02 15:38:42"> 2014-09-02</time></span> | <span class="comment-link">
+        <div class="categories"style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/建站知识/" itemprop="url"><span itemprop="title" >建站知识</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/git/" class="label label-primary" itemprop="url"><span itemprop="title">git</span></a><a href="/tags/github/" class="label label-success" itemprop="url"><span itemprop="title">github</span></a><a href="/tags/教程/" class="label label-info" itemprop="url"><span itemprop="title">教程</span></a></span> | <span class="time">最近更新:<time title="2014-09-02 19:38:56"datetime="2014-09-02 19:38:56"> 2014-09-02</time></span> | <span class="comment-link">
 <a href="http://blog.higrid.net/posts/understanding-the-github-workflow.html#comments" id="uyan_count_unit" su="understanding-the-github-workflow">暂无评论</a>
 </span>
         </footer>
@@ -502,47 +550,6 @@
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/posts/install-composer-on-windows.html">在Windows系统中安裝使用composer</a></h1>
-      
-        <span>发表于<time datetime="2014-07-05T06:10:43.000Z"> <a href="/posts/install-composer-on-windows.html">2014-07-05</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>Composer 是PHP中用来管理依赖(dependency)关系的工具。你可以在自己的项目中声明所依赖的外部工具库(libraries)，Composer会帮你安装这些依赖的库文件。Composer 是兼容多平台的，其运行适用于Windows，Linux和OSX。<br>大多数<strong>PHP</strong>开发人员会选择他们自己喜欢的框架来处理他们的代码，比如DB交互、ORIMS、Oauth、Amazon S3整合等。 不好的地方就是转换框架（或者根本不需要返回使用框架）就感觉像在做噩梦，因为涉及到使用新工具，你必须重新学习里面的一切东西，而这并不简单。OK， Composer 来解决这些问题。</p>
-
-      
-    </div>
-    
-    
-      
-      <div id='more-link'>
-        <div align="left">
-          <a href="/posts/install-composer-on-windows.html#more" class="more-link fa fa-play">阅读全文</a>
-        </div>
-      </div>
-      
-    
-    
-        <footer id="post-meta">
-        <div class="categories"style="display:inline">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/知识总结/" itemprop="url"><span itemprop="title" >知识总结</span></a></li></span></div> | <span class="tags">标签 <a href="/tags/php/" class="label label-primary" itemprop="url"><span itemprop="title">php</span></a><a href="/tags/软件/" class="label label-success" itemprop="url"><span itemprop="title">软件</span></a></span> | <span class="time">最近更新:<time title="2014-07-10 19:48:45"datetime="2014-07-10 19:48:45"> 2014-07-10</time></span> | <span class="comment-link">
-<a href="http://blog.higrid.net/posts/install-composer-on-windows.html#comments" id="uyan_count_unit" su="install-composer-on-windows">暂无评论</a>
-</span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -596,7 +603,7 @@
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-02 15:40:12</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-04 19:44:23</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -608,7 +615,7 @@
             <script type="text/javascript">
 var uyan_config={
      'url':'http://blog.higrid.net/',
-'su':'install-composer-on-windows'
+'su':'linux-basic-command'
 };
 _js2load.push({src:'http://v2.uyan.cc/code/uyan.js?uid=1600048'});
 </script>

@@ -96,6 +96,52 @@
        <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
       <section id='header_widget'></section>
           <div id="wrapper"><article>
+<div id="page" class="page well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/posts/linux-basic-command.html">linux基础教程及常用配置</a></h1>
+      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <h2 id="linux运行级别和启动流程">linux运行级别和启动流程</h2>
+<p>只有了解linux的启动流程才能更好的去优化和配置Linux,譬如说一台服务器我为什么要保证3，5启动软件即可，是怎么启动的呢？</p>
+<ol>
+<li>bios找到mbr主引导区，这个东西才512字节，深入的可以查询一下</li>
+<li>进入grub界面找启动内核</li>
+<li>读取kernel内核文件 /boot/vmlinuz-*</li>
+<li>读取init的镜像文件 /boot/initrd-*</li>
+<li>init读取/etc/inittab</li>
+<li>读取启动级别(id:3:initdefault)</li>
+<li>读取/etc/rc.d/rc.sysinit,完成时间、主机名称，还要分区表/etc/fstab</li>
+<li>读取/etc/rc.d/rc脚本，通过脚本转换3级别，然后启动/etc/rc.d/rc3.d/下所有S来头的服务，不启动目录下K开头的服务</li>
+<li>进入登录界面</li>
+</ol>
+
+      
+    </div>
+    
+    
+      
+      <div id='more-link'>
+        <div align="left">
+          <a href="/posts/linux-basic-command.html#more" class="more-link fa fa-play">阅读全文</a>
+        </div>
+      </div>
+      
+    
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
 <div id="post" class="post well">
   <div class="post-content">
     <header class="well-sm">
@@ -433,7 +479,7 @@
   <span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3552716'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D3552716%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span>  </div>
-  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-04 19:44:23</em></span></div>
+  <div id="copyright">Copyright &copy; 2014 嗨网在线HiGrid.net. All rights reserved.<span class="pull-right"> 最后更新时间: <em>2014-09-17 09:10:21</em></span></div>
 </div>
 <div class="clearfix"></div>
 
